@@ -9,9 +9,114 @@
     <table>
         <tbody>
             <tr>
-                <td valign ="top">Kanbas Navigation</td> <!-- paste in later -->
-                <td valign ="top">Course Navigation</td> <!-- paste in later -->
-                <td valign ="top">Editor</td>         <!-- paste in later -->
+                <td valign ="top">
+                    <ul>
+                        <li><a href="/Kanbas/Account/Navigation/index.html">
+                           Account</a></li>
+                        <li>
+                         <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
+                        </li>
+                        <li>
+                         <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+                        </li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Studio</a></li>
+                        <li><a href="#">Commons</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>                    
+                </td> 
+                <td valign ="top">
+                    <ul>
+                        <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                        <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
+                        <li><a href="#">Piazza</a></li>
+                        <li><a href="#">Zoom Meetings</a></li>
+                        <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                        <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                        <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                        <li><a href="#">People</a></li>
+                        <li><a href="#">Panopto Video</a></li>
+                        <li><a href="#">Discussions</a></li>
+                        <li><a href="#">Announcements</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Rubrics</a></li>
+                        <li><a href="#">Outcomes</a></li>
+                        <li><a href="#">Collaborations</a></li>
+                        <li><a href="#">Syllabus</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>                    
+                </td> 
+                <td valign ="top">
+                    <label for="asssignment-name"><h3>Assignment Name</h3></label>
+                    <input placeholder="A1" id="wd-assignment-name"/> <br /><br />
+
+                    <textarea placeholder="Enter the assignment description here"></textarea>
+
+                    <!-- Two columns -->
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Points</td>
+                                <td>
+                                    <input type="number" name="wd-points" id="wd-points" min="0" max="100" value="100" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Assignment Group</td>
+                                <td>
+                                    <select name="wd-assignment-group" id="wd-assignment-group">
+                                        <option value="ASSIGNMENTS">ASSIGNMENTS</option>
+                                        <option value="QUIZZES">QUIZZES</option>
+                                        <option value="EXAMS">EXAMS</option>
+                                        <option value="PROJECT">PROJECT</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Display Grade as</td>
+                                <td>
+                                    <select name="wd-display-grade-as" id="wd-display-grade-as">
+                                        <option value="Points">Points</option>
+                                        <option value="Percentage">Percentage</option>
+                                        <option value="Complete/Incomplete">Complete/Incomplete</option>
+                                        <option value="Letter Grade">Letter Grade</option>
+                                        <option value="GPA Scale">GPA Scale</option>
+                                        <option value="Not Graded">Not Graded</option>
+                                    </select>
+                                </td>
+                            <tr>
+                                <td valign="top">Submission Type</td>
+                                <td>
+                                    <label>Online Entry Options</label><br />
+                                    <input type="checkbox" name="wd-entry-options" id="wd-text-options"/> Text Entry<br />
+                                    <input type="checkbox" name="wd-entry-options" id="wd-website-url"/> Website URL<br />
+                                    <input type="checkbox" name="wd-entry-options" id="wd-media-recordings"/> Media Recordings<br />
+                                    <input type="checkbox" name="wd-entry-options" id="wd-student-annotations"/> Student Annotations<br />
+                                    <input type="checkbox" name="wd-entry-options" id="wd-file-uploads"/> File Uploads<br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">Assign</td>
+                                <td>
+                                    <label>Assign to </label> <br />
+                                        <input type="checkbox" name="wd-assign-to" id="wd-assign-to-everyone" value="Everyone" checked="checked" /> Everyone <br />
+                                    <label>Due</label> <br />
+                                        <input type="date" name="wd-due-date"  value="2024-01-01" min="2024-01-01" max="2025-12-31" /> <br />
+                                    <label>Available From</label> <br />
+                                        <input type="date" name="wd-available-from"  value="2024-01-01" min="2024-01-01" max="2025-12-31" /> <br />
+                                    <label>Until</label> <br />
+                                        <input type="date" name="wd-until"  value="2024-01-01" min="2024-01-01" max="2025-12-31" /> <br />
+                                    <button style="width:100%">+ Add</button>
+                                    </td>
+                        </tbody>
+                    </table>
+                    <input type="checkbox" name="wd-notify-users" id="wd-notify-users"/> Notify users that this content has changed
+                    <button>Cancel</button> <button style="background-color:red; color:antiquewhite">Save</button>
+                </td>         
             </tr>
         </tbody>
     </table>
