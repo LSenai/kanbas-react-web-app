@@ -1,0 +1,14 @@
+p {
+    background-color: red;
+    color: white;
+}
+
+p {
+    background-color: blue;
+    color: white;
+}
+
+.wd-highlight-content {
+    background-color: yellow;
+    color: blue;
+}
