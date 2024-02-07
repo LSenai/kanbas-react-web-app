@@ -3,19 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
+    <title>Kanbas | Course Dashboard</title>
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Dashboard/styles.css" />
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/d433814c32.js" crossorigin="anonymous"></script>    
 </head>
 <body>
-    <div class=""d-flex">
-        <h1>
-            Kanbas Nav
-        </h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div class="navigation-bar">
+                    <ul class="wd-kanbas-navigation">
+                        <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
+                        <li><a href="/Kanbas/Account/Profile/screen.html">
+                            <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
+                        <li class="wd-active">
+                            <a href="/Kanbas/Dashboard/screen.html">
+                                <i class="fa fa-tachometer"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">
+                                <i class="fa fa-thin fa-book"></i>Courses</a></li>
+                        <li><a href="#">
+                            <i class="far fa-calendar"></i>Calendar</a></li>
+                        <li><a href="#">
+                            <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-thin fa-clock"></i>History</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-solid fa-video"></i>Studio</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
+                    </ul> 
+                </div>
+            </div>
+            <div class="col-10" style="margin-left: 100px;">
+                <div class="wd-dashboard">
+                    <h1>Dashboard</h1>
+                    <hr />
+                    <h2>Published Courses (9)</h2>
+                    <hr />
+                    <div class="row">
+                      <div class="row row-cols-1 row-cols-md-5 g-4">
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col" style="width: 300px">
+                              <div class="card">
+                                  <a href="/Kanbas/Courses/Home/screen.html"><img
+                                    src="../../images/get$.jpg"
+                                    class="card-img-top"
+                                    style="max-height: 150px"
+                                  /></a>
+                                  <div class="card-body">
+                                    <a
+                                      class="card-title"
+                                      href="/Kanbas/Courses/Home/screen.html"
+                                      style="text-decoration: none; color: navy; font-weight: bold"
+                                    >
+                                      CS1234 React JS</a
+                                    >
+                                    <p class="card-text">Full Stack software developer</p>
+                                    <a href="/Kanbas/Courses/Home/screen.html" class="btn btn-primary"> Go </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <h1>Dashboard</h1>
-    </div>
-    
+
 </body>
 </html>

@@ -3,28 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Courses > Home</title>
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/d433814c32.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="navigation-bar">
+       <ul class="wd-kanbas-navigation">
+        <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
+        <li><a href="/Kanbas/Account/Profile/screen.html">
+            <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
+        <li class="wd-active">
+            <a href="/Kanbas/Dashboard/screen.html">
+                <i class="fa fa-tachometer"></i> Dashboard</a>
+        </li>
+        <li>
+            <a href="/Kanbas/Courses/Home/screen.html">
+                <i class="fa fa-thin fa-book"></i>Courses</a></li>
+        <li><a href="#">
+            <i class="far fa-calendar"></i>Calendar</a></li>
+        <li><a href="#">
+            <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
+        <li><a href="#">
+            <i class="fa fa-thin fa-clock"></i>History</a></li>
+        <li><a href="#">
+            <i class="fa fa-solid fa-video"></i>Studio</a></li>
+        <li><a href="#">
+            <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
+        <li><a href="#">
+            <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
+        </ul> 
+    </div>
+    
     <table width="100%"> 
         <tbody>
             <tr>
                 <td valign ="top">
-                    <ul>
-                        <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-                        <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-                        <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Studio</a></li>
-                        <li><a href="#">Commons</a></li>
-                        <li><a href="#">Help</a></li>
-                    </ul>   
+        <!--             <ul class="wd-kanbas-navigation">
+                        <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
+                        <li><a href="/Kanbas/Account/Profile/screen.html">
+                            <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
+                        <li class="wd-active">
+                            <a href="/Kanbas/Dashboard/screen.html">
+                                <i class="fa fa-tachometer"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">
+                                <i class="fa fa-thin fa-book"></i>Courses</a></li>
+                        <li><a href="#">
+                            <i class="far fa-calendar"></i>Calendar</a></li>
+                        <li><a href="#">
+                            <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-thin fa-clock"></i>History</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-solid fa-video"></i>Studio</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
+                        <li><a href="#">
+                            <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
+                    </ul> -->
                 </td>
                 <td valign ="top">
-                    <ul>
-                        <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                    <ul class="wd-navigation" style="margin-left: 100px;">
+                        <li class="wd-active"><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
                         <li><a href="#">Modules</a></li>
                         <li><a href="#">Piazza</a></li>
                         <li><a href="#">Zoom Meetings</a></li>
