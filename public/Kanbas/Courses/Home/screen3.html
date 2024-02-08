@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses > Home</title>
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/d433814c32.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+    <style>
+        /* Custom CSS for visualization */
+        .custom-border {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Implement links to Kanbas and Course Navigation -->
+    <div class="d-flex custom-border">
+        <div class="d-none d-md-block custom-border">
+            <ul class="wd-navigation" style="margin-left: 100px;">
+                <ul class="wd-kanbas-navigation">
+                    <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
+                    <li><a href="/Kanbas/Account/Profile/screen.html">
+                        <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
+                    <li class="wd-active">
+                        <a href="/Kanbas/Dashboard/screen.html">
+                            <i class="fa fa-tachometer"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/screen.html">
+                            <i class="fa fa-thin fa-book"></i>Courses</a></li>
+                    <li><a href="#">
+                        <i class="far fa-calendar"></i>Calendar</a></li>
+                    <li><a href="#">
+                        <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-thin fa-clock"></i>History</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-solid fa-video"></i>Studio</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="d-none d-md-block custom-border">
+            <ul class="wd-kanbas-navigation">
+                <li class="wd-active"><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="flex-fill custom-border">
+            <div class="row custom-border">
+                <div class="col custom-border">
+                    <span style="justify-items: flex-end;">
+                        <!-- Buttons -->
+                    </span>
+                </div>
+            </div>
+
+            <ul class="list-group wd-modules custom-border">
+                <!-- Module list -->
+            </ul>
+        </div>
+
+        <div class="col-lg-3 d-none d-lg-block custom-border">
+            <div class="me-2 custom-border">
+                <h3>Course Status</h3>
+                <table class="custom-border">
+                    <tbody>
+                        <tr class="custom-border">
+                            <td class="custom-border"><button class="custom-border">Unpublish</button></td>
+                            <td class="custom-border"><button class="custom-border">Publish</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="custom-border">
+                    <!-- Status links -->
+                </ul>
+                <h3>Coming Up</h3>
+                <p><a href="#">View Calendar</a></p>
+                <ul class="custom-border">
+                    <!-- Upcoming events -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,25 +1,91 @@
-<!-- Implementing a nested set of lists -->
 
-<button> Collapse All</button>
-<button> Expand All</button>
-<button> View Progress</button>
-<select>
-    <option>Publish All</option>
-    
-</select>
+<link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+<script src="https://kit.fontawesome.com/d433814c32.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+
+<div class = "row">
+  <span style="justify-items: flex-end;">
+    <button type="button" class="btn btn-secondary"> Collapse All</button>
+    <button type="button" class="btn btn-secondary"> Expand All</button>
+    <button type="button" class="btn btn-secondary"> View Progress</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary">Publish All</button>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Publish All</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-danger">+ Module</button>
+    <button type="button" class="btn btn-secondary">︙</button>
+
+  </span>
+</div>
 
 
-<ul>
-    <li> Week 1
-      <ul>
-        <li>Learning Objectives
-        <li>Introduction to the course</li>
-        <li>Learn what is Web Development</li>
+<ul class="list-group wd-modules">
+    <li class="list-group-item"> 
+      <div>
+        <i class="fa fa-ellipsis-v"></i> Week 1
+        <span class="float-end">
+          <i class = "fa fa-check-circle text-success"></i>
+          <i class="fa fa-plus ms-2"></i>
+          <i class="fa fa-ellipsis-v ms-2"></i>
+        </span>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item">Learning Objectives
+          <span class="float-end">
+            <i class = "fa fa-check-circle text-success"></i>
+            <i class="fa fa-ellipsis-v ms-2"></i>
+          </span>
+
+        </li>
+        <li class="list-group-item">Introduction to the course
+          <span class="float-end">
+            <i class = "fa fa-check-circle text-success"></i>
+            <i class="fa fa-ellipsis-v ms-2"></i>
+          </span>
+        </li>
+
+        <li class="list-group-item">Learn what is Web Development
+          <span class="float-end">
+            <i class = "fa fa-check-circle text-success"></i>
+            <i class="fa fa-ellipsis-v ms-2"></i>
+          </span>
+        </li>
       </ul>
     </li>
-    <li> Week 2
-      <ul>
-        <li>Learning Objectives</li>
+    <li class="list-group-item"> 
+      <div>
+        <i class="fa fa-ellipsis-v"></i> Week 2
+        <span class="float-end">
+          <i class = "fa fa-check-circle text-success"></i>
+          <i class="fa fa-plus ms-2"></i>
+          <i class="fa fa-ellipsis-v ms-2"></i>
+        </span>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item">Learning Objectives
+          <span class="float-end">
+            <i class = "fa fa-check-circle text-success"></i>
+            <i class="fa fa-ellipsis-v ms-2"></i>
+          </span>
+        </li>
+
+        <li class="list-group-item">How To Hack a Bank
+          <span class="float-end">
+            <i class = "fa fa-check-circle text-success"></i>
+            <i class="fa fa-ellipsis-v ms-2"></i>
+          </span>
+        </li>
       </ul>
     </li>
 </ul>
