@@ -13,29 +13,23 @@
 </head>
 <body>
      <!-- New breadcrumb for small screens. Haven't gotten this to fully wok yet-->
-     <div class="wd-breadcrumb-bar d-block d-md-none">
-        <div class="container d-flex align-items-center justify-content-between">
-            <!-- Toggle icon for main navigation menu -->
-            <div class="toggle-icon" id="mainNavToggle">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div>
-                <p>[CLASS NAME] <br />Modules</p>
-            </div>
-            <!-- Secondary navigation menu -->
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="secondaryNavToggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="secondaryNavToggle">
-                    <li><a class="dropdown-item" href="#">Home</a></li>
-                    <li><a class="dropdown-item" href="#">Modules</a></li>
-                    <li><a class="dropdown-item" href="#">Piazza</a></li>
-                    <!-- Add more items here -->
-                </ul>
+        <div class="wd-breadcrumb-bar d-block d-md-none">
+            <div class="container d-flex align-items-center justify-content-between">
+                <!-- Toggle icon for main navigation menu -->
+                <div class="toggle-icon" id="mainNavToggle">
+                    <button style="background-color: black"><a href="/Kanbas/Courses/Home/NavMenus/main_nav.html" style="background-color:black; color: white; text-decoration: none; padding: 8px 12px; border-radius: 4px;"><i class="fa-solid fa-bars"></i></a></button>
+                </div>
+                <div>
+                    <p>[CLASS NAME] <br />Modules</p>
+                </div>
+                <!-- Secondary navigation menu -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="secondaryNavToggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="/Kanbas/Courses/Home/NavMenus/secondary_nav.html"><i class="fas fa-chevron-down"></i></a> 
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
     <!-- Implement links to Kanbas and Course Navigation -->
     <div class="d-none d-md-block">
           <ul class="wd-kanbas-navigation">
@@ -87,7 +81,6 @@
             </ul>
       </div>
 
-      
 
     <div class="flex-fill">
         <div class="wd-course-breadcrumb">

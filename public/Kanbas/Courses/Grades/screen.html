@@ -7,167 +7,193 @@
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
-    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
     <script src="https://kit.fontawesome.com/d433814c32.js" crossorigin="anonymous"></script>
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
 </head>
 <body>
-    <table width="100%">
-        <tbody>
-            <tr>
-                <td valign ="top">
-                    <ul class="wd-kanbas-navigation">
-                        <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
-                        <li><a href="/Kanbas/Account/Profile/screen.html">
-                            <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
-                        <li >
-                            <a href="/Kanbas/Dashboard/screen.html">
-                                <i class="fa fa-tachometer"></i> Dashboard</a>
-                        </li>
-                        <li class="wd-active">
-                            <a href="/Kanbas/Courses/Home/screen.html">
-                                <i class="fa fa-thin fa-book"></i>Courses</a></li>
-                        <li><a href="#">
-                            <i class="far fa-calendar"></i>Calendar</a></li>
-                        <li><a href="#">
-                            <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
-                        <li><a href="#">
-                            <i class="fa fa-thin fa-clock"></i>History</a></li>
-                        <li><a href="#">
-                            <i class="fa fa-solid fa-video"></i>Studio</a></li>
-                        <li><a href="#">
-                            <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
-                        <li><a href="#">
-                            <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
-                    </ul>
-                </td> 
-                <td valign ="top">
-                    <ul class="wd-navigation" style="margin-left: 100px;">
-                        <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                        <li><a href="#">Modules</a></li>
-                        <li><a href="#">Piazza</a></li>
-                        <li><a href="#">Zoom Meetings</a></li>
-                        <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
-                        <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
-                        <li class="wd-active"><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-                        <li><a href="#">People</a></li>
-                        <li><a href="#">Panopto Video</a></li>
-                        <li><a href="#">Discussions</a></li>
-                        <li><a href="#">Announcements</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Files</a></li>
-                        <li><a href="#">Rubrics</a></li>
-                        <li><a href="#">Outcomes</a></li>
-                        <li><a href="#">Collaborations</a></li>
-                        <li><a href="#">Syllabus</a></li>
-                        <li><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
-                    </ul>      
-                </td> 
-                <td valign ="top">
-                    <table>
-                        <tbody>
-                            <tr  valign="top">
-                                <td>
-                                    <select>
-                                        <option>Gradebook</option>
-                                        <option>Change Gradebook</option>
-                                        <option>Traditional Gradebook</option>
-                                        <option>Individual Gradebook</option>
-                                    </select>
-                                    <label><h4>Student Names</h4></label>
-                                    <input placeholder="Search Students"/> 
-                                    <label><h4>Assignment Names</h4></label> 
-                                    <input placeholder="Search Assignment"/> <br />
-                                </td>
-                                <td>
-                                    <button>Import</button>
-                                    <select>
-                                        <option>Export</option>
-                                        <option>Export Current Gradebook</option>
-                                        <option>Export Entire Gradebook</option>
-                                    </select>
-                                    <button>Configure</button>      <br />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button>Apply Filters</button> 
-                    
-                    <table border="1" width="100%">
-                        <thead>
-                            <tr>
-                                <th rowspan="2">Student Name</th>
-                                <th>A1</th>
-                                <th>A2</th>
-                                <th>A3</th>
-                                <th>A4</th>
-                                <th>Q1</th>
-                                <th>Q2</th>
-                                <th>Q3</th>
-                                <th>Q4</th>
-                    
-                            </tr>
-                            <tr>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                                <th>Out of 100</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Edward Snowden</td>
-                            <td input value = "100" type ="number" max ="100" min="0">100</td>
-                            <td><input value= "100" type="number" max="100" min="0"></td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type ="number" max ="100" min="0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                        </tr>
-                        <tr>
-                            <td>Bob Builder</td>
-                            <td><input value= "100" type="number" max="100" min="0"></td>
-                            <td><input value="88" type="number" max="100" min="0"></td>
-                            <td><input value="77" type="number" max="100" min="0"></td>
-                            <td><input value="88" type="number" max="100" min="0"></td>
-                            <td><input value="100" type="number" max="100" min="0"></td>
-                            <td><input value="100" type="number" max="100" min="0"></td>
-                            <td><input value="100" type="number" max="100" min="0"></td>
-                            <td><input value="100" type="number" max="100" min="0"></td>
-                        </tr>    
-                        <tr>
-                            <td>Lucy Parsons</td>
-                            <td input value = "100" type ="number" max ="100" min="0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                            <td input value = "100" type ="number" max ="100" min="0">100</td>
-                            <td input value = "100" type = "number" max = "100" min = "0">100</td>
-                        </tr>
-                        <tr>
-                            <td>Donald Trump</td>
-                            <td input value = "0" type = "number" max = "100" min = "0">0</td>
-                            <td input value = "50" type ="number" max ="100" min="0">50</td>    
-                            <td input value = "50" type = "number" max = "100" min = "0">50</td>
-                            <td><input value="90" type="number" max="100" min="0"></td>
-                            <td input value = "50" type ="number" max ="100" min="0">50</td>    
-                            <td input value = "0" type = "number" max = "100" min = "0">0</td>
-                            <td input value = "0" type = "number" max = "100" min = "0">0</td>
-                            <td input value = "0" type = "number" max = "100" min = "0">0</td>
-                        </tr> 
-                        </tbody>
-                    </table>
-                </td>         
-            </tr>
-        </tbody>
-    </table>
-    
+    <!-- Tiny breadcrumb for small screens. Haven't gotten this to fully wok yet-->
+    <div class="wd-breadcrumb-bar d-block d-md-none">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Toggle icon for main navigation menu -->
+            <div class="toggle-icon" id="mainNavToggle">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div>
+                <p>[CLASS NAME] > Grades </p>
+            </div>
+            <!-- Secondary navigation menu -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="secondaryNavToggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="secondaryNavToggle">
+                    <li><a class="dropdown-item" href="#">Home</a></li>
+                    <li><a class="dropdown-item" href="#">Modules</a></li>
+                    <li><a class="dropdown-item" href="#">Piazza</a></li>
+                    <!-- Add more items here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        <!-- Implement links to Kanbas and Course Navigation -->
+    <div class="d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+              <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
+              <li><a href="/Kanbas/Account/Profile/screen.html">
+                  <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
+              <li>
+                  <a href="/Kanbas/Dashboard/screen.html">
+                      <i class="fa fa-tachometer"></i> Dashboard</a>
+              </li>
+              <li class="wd-active">
+                  <a href="/Kanbas/Courses/Home/screen.html">
+                      <i class="fa fa-thin fa-book"></i>Courses</a></li>
+              <li><a href="#">
+                  <i class="far fa-calendar"></i>Calendar</a></li>
+              <li><a href="#">
+                  <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
+              <li><a href="#">
+                  <i class="fa fa-thin fa-clock"></i>History</a></li>
+              <li><a href="#">
+                  <i class="fa fa-solid fa-video"></i>Studio</a></li>
+              <li><a href="#">
+                  <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
+              <li><a href="#">
+                  <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
+          </ul>
+    </div>
+
+    <div class="d-flex">
+      <div class="d-none d-md-block">
+            <ul class="wd-navigation" style="margin-left: 100px;">
+                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                <li class="wd-active"><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
+            </ul>
+      </div>
+      
+      <div class="container">
+            <div class="d-none d-md-block">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Course Name</a></li>
+                    <li class="breadcrumb-item"><a href="#">Term</a></li>
+                    <li class="breadcrumb-item"><a href="#">Section</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                    </ol>
+                </nav>
+            </div>
+            
+            
+            <div class="row wd-grades-main">
+                <div class="col">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button class="btn btn-secondary float-end mb-2 me-2"><i class="fa-solid fa-file-import"></i> Import</button>
+                            <button class="btn btn-secondary float-end mb-2 me-2"><i class="fa-solid fa-file-export"></i> Export</button>
+                            <button class="btn btn-secondary float-end mb-2 me-2"><i class="fa-solid fa-gear"></i></button>
+                        </div>
+                        
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Student Names</label>
+                            <input class="form-control mb-2" placeholder="Search Students"/> 
+                        </div>
+                        <div class="col">
+                            <label>Assignment Names</label> 
+                            <input class="form-control mb-2" placeholder="Search Assignment"/> 
+                        </div>
+                    </div>
+                        
+                </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button class="btn btn-primary">Apply Filters <i class="fas fa-filter"></i></button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Student Name</th>
+                                    <th colspan="2">Assignments</th>
+                                </tr>
+                                <tr>
+                                    <th>A1</th>
+                                    <th>A2</th>
+                                    <th>A3</th>
+                                    <th>A4</th>
+                                    <th>A5</th>
+                                    <th>A6</th>
+                                    <th>Q1</th>
+                                    <th>Q2</th>
+                                    <th>Q3</th>
+                                    <th>Q4</th>
+                                </tr>
+                            </thead>
+                            <tbody class="wd-grades-cells">
+                                <tr>
+                                    <td>Edward Snowden</td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Julian Assange</td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Leo Senai</td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                    <td><input class="form-control wd-grades-cells" value="100" type="number" max="100" min="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
