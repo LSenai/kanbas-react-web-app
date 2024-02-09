@@ -8,8 +8,149 @@
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
     <script src="https://kit.fontawesome.com/d433814c32.js" crossorigin="anonymous"></script>
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
 </head>
 <body>
+    <!-- New breadcrumb for small screens. Haven't gotten this to fully wok yet-->
+    <div class="wd-breadcrumb-bar d-block d-md-none">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Toggle icon for main navigation menu -->
+            <div class="toggle-icon" id="mainNavToggle">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div>
+                <p>[CLASS NAME] <br />Modules</p>
+            </div>
+            <!-- Secondary navigation menu -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="secondaryNavToggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="secondaryNavToggle">
+                    <li><a class="dropdown-item" href="#">Home</a></li>
+                    <li><a class="dropdown-item" href="#">Modules</a></li>
+                    <li><a class="dropdown-item" href="#">Piazza</a></li>
+                    <!-- Add more items here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Implement links to Kanbas and Course Navigation -->
+    <div class="d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+              <li><a href= "http://northeastern.edu"><img src="../../../images/NEU_logo.png" width="70px" alt="NEU logo"></a></li>
+              <li><a href="/Kanbas/Account/Profile/screen.html">
+                  <i id="wd-account-link" class="fa fa-regular fa-user"></i>Account</a></li>
+              <li>
+                  <a href="/Kanbas/Dashboard/screen.html">
+                      <i class="fa fa-tachometer"></i> Dashboard</a>
+              </li>
+              <li class="wd-active">
+                  <a href="/Kanbas/Courses/Home/screen.html">
+                      <i class="fa fa-thin fa-book"></i>Courses</a></li>
+              <li><a href="#">
+                  <i class="far fa-calendar"></i>Calendar</a></li>
+              <li><a href="#">
+                  <i class="fas fa-solid fa-inbox"></i><br />Inbox</a></li>
+              <li><a href="#">
+                  <i class="fa fa-thin fa-clock"></i>History</a></li>
+              <li><a href="#">
+                  <i class="fa fa-solid fa-video"></i>Studio</a></li>
+              <li><a href="#">
+                  <i class="fa fa-regular fa-circle-right"></i>Commons</a></li>
+              <li><a href="#">
+                  <i class="fa fa-regular fa-circle-question"></i><br />Help</a></li>
+          </ul>
+    </div>
+
+    <div class="d-flex">
+      <div class="d-none d-md-block">
+            <ul class="wd-navigation" style="margin-left: 100px;">
+                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li class="wd-active"><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
+            </ul>
+      </div>
+
+        <div class="wd-assignments-main d-none d-md-block">
+            <div class="row">
+                <div class="col">
+                    
+                    <input type="text" placeholder="Search for Assignments" />
+                        <button type="button" class="btn btn-secondary">+ Group</button>
+                        <button type="button" class="btn btn-danger">+ Assignment</button>
+                        <select class="form-select">
+                            <option selected value="edit-assignment">Edit Assignment Dates</option>
+                            <option value="assignment-groups">Assignment Groups Weight</option>
+                            <option value="gradescope">Gradescope 1.3</option>
+                            <option value="commons">Commons Favorites</option>
+                        </select> 
+                </div>  
+            </div>
+            <!-- Clicking Assignment in the Course Navigation sidebar displays the Assignment screen as shown below. Use Bootstrap's float-end classes to send the Group, Assignment and Edit (︙) buttons to the right of the screen. Use the form-control and w-25 to style the Search for Assignment input field. Use the list-group and list-group-item classes to style the list of assignments. Override the Bootstrap's list-group and list-group-item classes to remove the rounded corners. Use Fontawesome icons for the plus, checkmark and ellipsis icons in the buttons. Use the rounded classes to style the border around 40% of Total. Use the margin and padding classes to add white spaces around and between the content as shown below.
+-->
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item"> ASSIGNMENTS
+                            <button type="button" class="btn btn-success float-end">+</button>
+                            <select class="form-select float-end w-25">
+                                <option selected>Edit</option>
+                                <option>Speed Grader</option>
+                                <option>Duplicate</option>
+                                <option>Delete</option>
+                                <option>Move To...</option>
+                                <option>Send To...</option>
+                                <option>Copy To...</option>
+                                <option>Share to Commons</option>
+                            </select>
+                            <ul class="list-group">
+                                <li class="list-group-item"> <a href="/Kanbas/Courses/Assignments/Editor/screen.html">A1</a> 
+                                    <br />
+                                    <a href="#">Multiple Modules</a> | Due Date: <span id="duedate">1/25/2023</span>
+                                    <span class="float-end">
+                                        <i class = "fa fa-check-circle text-success"></i>
+                                        <i class="fa fa-ellipsis-v ms-2"></i>
+                                    </span>
+                                </li>
+                                <li class="list-group-item"> <a href="/Kanbas/Courses/Assignments/Editor/screen.html">A2</a> 
+                                    <br />
+                                    <a href="#">Multiple Modules</a> | Due Date: <span id="duedate">Not available yet</span>
+                                    <span class="float-end">
+                                        <i class = "fa fa-check-circle text-success"></i>
+                                        <i class="fa fa-ellipsis-v ms-2"></i>
+                                    </span>
+                                </li>
+                                <li class="list-group-item"> <a href="/Kanbas/Courses/Assignments/Editor/screen.html">A3</a> 
+                                    <br />
+                                    <a href="#">Multiple Modules</a> | Due Date: <span id="duedate">Not available yet</span>
+                                    <span class="float-end">
+                                        <i class = "fa fa-check-circle text-success"></i>
+                                        <i class="fa fa-ellipsis-v ms-2"></i>
+                                    </span>
+                                </li>
+
+
+        </div>
+
+            
+   <!--    
     <table  width="100%">
         <tbody>
             <tr>
@@ -189,6 +330,7 @@
                 </td>         
             </tr>
         </tbody>
-    </table>
+    </table> -->
+
 </body>
 </html>

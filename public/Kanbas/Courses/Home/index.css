@@ -7,3 +7,36 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.wd-module-main-buttons {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.wd-module-main {
+    margin-left: 20px;
+}
+
+.wd-course-status-btn-links {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.wd-course-status-buttons {
+    margin-top: 2px; 
+}
+
+.wd-breadcrumb-bar {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.wd-breadcrumb-bar .wd-toggle-icon {
+    cursor: pointer;
+    margin-right: 20px;
+}

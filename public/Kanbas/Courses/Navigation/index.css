@@ -6,6 +6,7 @@
     margin: 0px;
     margin-left: 20px;
   }
+
   .wd-navigation li {
     padding-left: 10px;
     margin-bottom: 10px;
@@ -13,14 +14,31 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .wd-navigation li.wd-active {
+
+.wd-navigation li.wd-active {
     border-left: 2px solid black;
   }
-  .wd-navigation li.wd-active a {
+
+.wd-navigation li.wd-active a {
     color: black;
   }
-  .wd-navigation a {
+  
+.wd-navigation a {
     color: red;
     text-decoration: none;
   }
   
+.wd-breadcrumb-bar {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.wd-breadcrumb-bar .wd-toggle-icon {
+    cursor: pointer;
+    margin-right: 20px;
+}
