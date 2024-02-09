@@ -10,4 +10,6 @@ I'll be updating the README as we go!
 
 The vanilla HTML version is deployed on netlify: https://comfy-bonbon-d2bf33.netlify.app/kanbas/courses/home/screen
 
-In the next version, we'll refactor using CSS. 
+V2 with CSS is up: https://assignment-2--comfy-bonbon-d2bf33.netlify.app/kanbas/dashboard/screen
+
+In the next version, we'll starting weaving in some JavaScript!
