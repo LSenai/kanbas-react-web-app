@@ -5,6 +5,7 @@ import IfElse from "./conditionals/IfElse";
 import TernaryOperator from "./conditionals/TernaryOperator";
 import WorkingWithFunctions from "./functions/WorkingWithFunctions";
 import WorkingWithArrays from "./arrays/WorkingWithArrays";
+import TemplateLiterals from "./string/TemplateLiterals";
 
 function JavaScript() {
     console.log('Hello World');
@@ -18,7 +19,7 @@ function JavaScript() {
             <TernaryOperator />
             <WorkingWithFunctions />
             <WorkingWithArrays />
-
+            <TemplateLiterals />
         </div>
     );
 }

@@ -1,7 +1,10 @@
 import ArrayIndexAndLength from "./ArrayIndexAndLength";
 import AddingAndRemovingDataToFromArrays from "./AddingAndRemovingDataToFromArrays ";
 import ForLoops from "./ForLoops";
-import MapFunction from "./MapFunction";  
+import MapFunction from "./MapFunction";
+import FilterFunction from "./FilterFunction";
+import FindFunction from "./FindFunction";
+import FindIndex from "./FindIndex";
 
 function WorkingWithArrays () {
     var functionScoped = 2;
@@ -22,6 +25,9 @@ function WorkingWithArrays () {
             <AddingAndRemovingDataToFromArrays />
             <ForLoops />
             <MapFunction />
+            <FindFunction />
+            <FindIndex />
+            <FilterFunction />
         </div>
     );
 }
