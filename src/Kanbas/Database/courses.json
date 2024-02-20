@@ -1,0 +1,83 @@
+[
+    {
+      "_id": "CT101",
+      "name": "Intro to Civic Technology",
+      "number": "CT4550",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "01-civic-tech.png"
+    },
+    {
+      "_id": "CT102",
+      "name": "Data Analysis for Public Policy",
+      "number": "CT4560",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "02-data-analysis.png"
+    },
+    {
+      "_id": "CT103",
+      "name": "Open Government and Transparency",
+      "number": "CT4570",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "03-opengov.png"
+    },
+    {
+      "_id": "CT104",
+      "name": "Digital Democracy and Participatory Governance",
+      "number": "CT4580",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "04-participatory.png"
+    },
+    {
+      "_id": "CT105",
+      "name": "Civic Hacking and Hacktivism",
+      "number": "CT4590",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "05-hacktiv.png"
+    },
+    {
+      "_id": "CT106",
+      "name": "Ethics and Privacy in Civic Technology",
+      "number": "CT4600",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "06-ethics.png"
+    },
+    {
+      "_id": "CT107",
+      "name": "Community Informatics",
+      "number": "CT4610",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "07-informatics.png"
+    },
+    {
+      "_id": "CT108",
+      "name": "Smart Cities and Urban Innovation",
+      "number": "CT4620",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "08-smartcity.png"
+    },
+    {
+      "_id": "CT109",
+      "name": "Political Mobilization in the Digital Age",
+      "number": "CT4630",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "09-mobilization.png"
+    },
+    {
+      "_id": "CT110",
+      "name": "Digital Service Design and Delivery",
+      "number": "CT4640",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15",
+      "image": "10-design.png"
+    }
+  ]
+  
