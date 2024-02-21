@@ -1,0 +1,783 @@
+[
+    {
+        "_id": "CT101M1",
+        "name": "Understanding Civic Technology",
+        "description": "Introduction to the concepts, principles, and applications of civic technology.",
+        "course": "CT101",
+        "lessons": [
+        {
+            "_id": "CT101L1",
+            "name": "What is Civic Technology?",
+            "description": "Exploring the definition and scope of civic technology.",
+            "module": "CT101M1"
+        },
+        {
+            "_id": "CT101L2",
+            "name": "History of Civic Technology",
+            "description": "Examining the historical development and evolution of civic technology.",
+            "module": "CT101M1"
+        },
+        {
+            "_id": "CT101L3",
+            "name": "Impact of Civic Technology",
+            "description": "Assessing the impact and significance of civic technology in modern society.",
+            "module": "CT101M1"
+        }
+        ]
+    },
+    {
+        "_id": "CT101M2",
+        "name": "Civic Tech Tools and Platforms",
+        "description": "Exploration of various tools, platforms, and technologies used in civic technology projects.",
+        "course": "CT101",
+        "lessons": [
+        {
+            "_id": "CT101L4",
+            "name": "Digital Engagement Platforms",
+            "description": "Overview of digital platforms for citizen engagement and participation.",
+            "module": "CT101M2"
+        },
+        {
+            "_id": "CT101L5",
+            "name": "Open Data Initiatives",
+            "description": "Understanding open data initiatives and their role in civic technology.",
+            "module": "CT101M2"
+        },
+        {
+            "_id": "CT101L6",
+            "name": "Civic Tech Case Studies",
+            "description": "Analysis of real-world civic technology projects and their outcomes.",
+            "module": "CT101M2"
+        }
+        ]
+    },
+    {
+        "_id": "CT101M3",
+        "name": "Ethics and Governance in Civic Technology",
+        "description": "Exploration of ethical and governance issues in the development and deployment of civic technology solutions.",
+        "course": "CT101",
+        "lessons": [
+        {
+            "_id": "CT101L7",
+            "name": "Ethical Considerations",
+            "description": "Examining ethical dilemmas and considerations in civic technology projects.",
+            "module": "CT101M3"
+        },
+        {
+            "_id": "CT101L8",
+            "name": "Privacy and Security",
+            "description": "Understanding privacy and security challenges in civic technology applications.",
+            "module": "CT101M3"
+        },
+        {
+            "_id": "CT101L9",
+            "name": "Policy and Regulation",
+            "description": "Exploring policy frameworks and regulations governing civic technology.",
+            "module": "CT101M3"
+        }
+        ]
+    },
+    {
+        "_id": "CT102M1",
+        "name": "Introduction to Data Analysis",
+        "description": "An introduction to fundamental concepts and techniques in data analysis for public policy.",
+        "course": "CT102",
+        "lessons": [
+        {
+            "_id": "CT102L1",
+            "name": "Foundations of Data Analysis",
+            "description": "Basic principles and methods used in data analysis.",
+            "module": "CT102M1"
+        },
+        {
+            "_id": "CT102L2",
+            "name": "Data Cleaning and Preprocessing",
+            "description": "Techniques for cleaning and preprocessing data for analysis.",
+            "module": "CT102M1"
+        },
+        {
+            "_id": "CT102L3",
+            "name": "Exploratory Data Analysis",
+            "description": "Methods for exploring and summarizing data to uncover insights.",
+            "module": "CT102M1"
+        }
+        ]
+    },
+    {
+        "_id": "CT102M2",
+        "name": "Statistical Analysis",
+        "description": "Exploration of statistical methods and techniques for analyzing public policy data.",
+        "course": "CT102",
+        "lessons": [
+        {
+            "_id": "CT102L4",
+            "name": "Descriptive Statistics",
+            "description": "Basic statistical measures used to describe data.",
+            "module": "CT102M2"
+        },
+        {
+            "_id": "CT102L5",
+            "name": "Inferential Statistics",
+            "description": "Techniques for making inferences and drawing conclusions from data samples.",
+            "module": "CT102M2"
+        },
+        {
+            "_id": "CT102L6",
+            "name": "Hypothesis Testing",
+            "description": "Methods for testing hypotheses and making statistical inferences.",
+            "module": "CT102M2"
+        }
+        ]
+    },
+    {
+        "_id": "CT102M3",
+        "name": "Data Visualization",
+        "description": "Exploration of visualization techniques for presenting public policy data effectively.",
+        "course": "CT102",
+        "lessons": [
+        {
+            "_id": "CT102L7",
+            "name": "Graphs and Charts",
+            "description": "Different types of graphs and charts used for visualizing data.",
+            "module": "CT102M3"
+        },
+        {
+            "_id": "CT102L8",
+            "name": "Interactive Data Visualization",
+            "description": "Tools and techniques for creating interactive visualizations.",
+            "module": "CT102M3"
+        },
+        {
+            "_id": "CT102L9",
+            "name": "Dashboard Design",
+            "description": "Principles and best practices for designing effective data dashboards.",
+            "module": "CT102M3"
+        }
+        ]
+    },
+    {
+    "_id": "CT103M1",
+    "name": "Principles of Open Government",
+    "description": "Exploration of the principles and concepts underlying open government initiatives.",
+    "course": "CT103",
+    "lessons": [
+        {
+        "_id": "CT103L1",
+        "name": "Definition and Scope",
+        "description": "Defining open government and its scope in public administration.",
+        "module": "CT103M1"
+        },
+        {
+        "_id": "CT103L2",
+        "name": "Transparency and Accountability",
+        "description": "Understanding the role of transparency and accountability in open government.",
+        "module": "CT103M1"
+        },
+        {
+        "_id": "CT103L3",
+        "name": "Citizen Engagement",
+        "description": "Exploring mechanisms for citizen engagement in open government processes.",
+        "module": "CT103M1"
+        }
+    ]
+    },
+    {
+    "_id": "CT103M2",
+    "name": "Open Data Initiatives",
+    "description": "Study of open data initiatives and their impact on government transparency and citizen participation.",
+    "course": "CT103",
+    "lessons": [
+        {
+        "_id": "CT103L4",
+        "name": "Open Data Policies",
+        "description": "Analysis of government policies and regulations related to open data initiatives.",
+        "module": "CT103M2"
+        },
+        {
+        "_id": "CT103L5",
+        "name": "Data Publishing Standards",
+        "description": "Exploration of standards and best practices for publishing open government data.",
+        "module": "CT103M2"
+        },
+        {
+        "_id": "CT103L6",
+        "name": "Data Use Cases",
+        "description": "Case studies demonstrating the use of open government data for various applications.",
+        "module": "CT103M2"
+        }
+    ]
+    },
+    {
+    "_id": "CT103M3",
+    "name": "Challenges and Opportunities",
+    "description": "Identification of challenges and opportunities in implementing open government initiatives.",
+    "course": "CT103",
+    "lessons": [
+        {
+        "_id": "CT103L7",
+        "name": "Implementation Challenges",
+        "description": "Analysis of obstacles and difficulties encountered in implementing open government policies.",
+        "module": "CT103M3"
+        },
+        {
+        "_id": "CT103L8",
+        "name": "Benefits and Impacts",
+        "description": "Assessment of the benefits and impacts of open government initiatives on society.",
+        "module": "CT103M3"
+        },
+        {
+        "_id": "CT103L9",
+        "name": "Future Trends",
+        "description": "Exploration of emerging trends and future directions in open government practices.",
+        "module": "CT103M3"
+        }
+    ]
+    },
+    {
+    "_id": "CT104M1",
+    "name": "Introduction to Digital Democracy",
+    "description": "Overview of digital democracy concepts and their implications for governance.",
+    "course": "CT104",
+    "lessons": [
+        {
+        "_id": "CT104L1",
+        "name": "Digital Citizenship",
+        "description": "Exploration of the concept of digital citizenship and its role in democratic processes.",
+        "module": "CT104M1"
+        },
+        {
+        "_id": "CT104L2",
+        "name": "E-Participation",
+        "description": "Understanding e-participation mechanisms and their impact on governance.",
+        "module": "CT104M1"
+        },
+        {
+        "_id": "CT104L3",
+        "name": "Online Deliberation",
+        "description": "Study of online deliberation platforms and their use in participatory decision-making.",
+        "module": "CT104M1"
+        }
+    ]
+    },
+    {
+    "_id": "CT104M2",
+    "name": "Technological Tools for Governance",
+    "description": "Exploration of technological tools and platforms for enhancing democratic processes.",
+    "course": "CT104",
+    "lessons": [
+        {
+        "_id": "CT104L4",
+        "name": "Crowdsourcing and Crowdfunding",
+        "description": "Analysis of crowdsourcing and crowdfunding platforms for civic engagement and fundraising.",
+        "module": "CT104M2"
+        },
+        {
+        "_id": "CT104L5",
+        "name": "Online Voting Systems",
+        "description": "Study of online voting systems and their potential for improving electoral processes.",
+        "module": "CT104M2"
+        },
+        {
+        "_id": "CT104L6",
+        "name": "Social Media in Governance",
+        "description": "Understanding the role of social media platforms in political discourse and governance.",
+        "module": "CT104M2"
+        }
+    ]
+    },
+    {
+    "_id": "CT104M3",
+    "name": "Policy and Regulatory Frameworks",
+    "description": "Examination of policy and regulatory frameworks governing digital democracy and participatory governance.",
+    "course": "CT104",
+    "lessons": [
+        {
+        "_id": "CT104L7",
+        "name": "Legal Issues in Digital Democracy",
+        "description": "Analysis of legal challenges and considerations in implementing digital democracy initiatives.",
+        "module": "CT104M3"
+        },
+        {
+        "_id": "CT104L8",
+        "name": "Ethical Considerations",
+        "description": "Exploration of ethical issues surrounding digital democracy and participatory governance practices.",
+        "module": "CT104M3"
+        },
+        {
+        "_id": "CT104L9",
+        "name": "Regulatory Frameworks",
+        "description": "Study of regulatory approaches and policies aimed at promoting digital democracy and citizen engagement.",
+        "module": "CT104M3"
+        }
+    ]
+    },
+    {
+    "_id": "CT105M1",
+    "name": "Introduction to Civic Hacking",
+    "description": "An introduction to the concept of civic hacking and its role in promoting civic engagement and social change.",
+    "course": "CT105",
+    "lessons": [
+        {
+        "_id": "CT105L1",
+        "name": "Definition and History",
+        "description": "Defining civic hacking and exploring its historical roots in activism and social movements.",
+        "module": "CT105M1"
+        },
+        {
+        "_id": "CT105L2",
+        "name": "Tools and Techniques",
+        "description": "Introduction to tools, platforms, and techniques used in civic hacking projects.",
+        "module": "CT105M1"
+        },
+        {
+        "_id": "CT105L3",
+        "name": "Case Studies",
+        "description": "Analysis of real-world case studies showcasing successful civic hacking initiatives and their impact.",
+        "module": "CT105M1"
+        }
+    ]
+    },
+    {
+    "_id": "CT105M2",
+    "name": "Ethical Hacking and Digital Activism",
+    "description": "Exploration of ethical considerations in hacking and the role of digital activism in promoting social justice.",
+    "course": "CT105",
+    "lessons": [
+        {
+        "_id": "CT105L4",
+        "name": "Ethical Hacking Principles",
+        "description": "Understanding ethical hacking principles, including responsible disclosure and vulnerability disclosure.",
+        "module": "CT105M2"
+        },
+        {
+        "_id": "CT105L5",
+        "name": "Cybersecurity and Privacy",
+        "description": "Discussion of cybersecurity and privacy concerns in civic hacking and hacktivism.",
+        "module": "CT105M2"
+        },
+        {
+        "_id": "CT105L6",
+        "name": "Digital Activism Strategies",
+        "description": "Exploration of strategies and tactics used in digital activism campaigns for social change.",
+        "module": "CT105M2"
+        }
+    ]
+    },
+    {
+    "_id": "CT105M3",
+    "name": "Hackathon Planning and Execution",
+    "description": "Guidance on planning, organizing, and executing hackathons focused on civic issues and social impact.",
+    "course": "CT105",
+    "lessons": [
+        {
+        "_id": "CT105L7",
+        "name": "Hackathon Fundamentals",
+        "description": "Introduction to hackathon concepts, formats, and best practices.",
+        "module": "CT105M3"
+        },
+        {
+        "_id": "CT105L8",
+        "name": "Theme Selection and Challenges",
+        "description": "Guidelines for selecting themes and challenges aligned with civic goals and community needs.",
+        "module": "CT105M3"
+        },
+        {
+        "_id": "CT105L9",
+        "name": "Event Logistics and Community Engagement",
+        "description": "Tips for managing event logistics and engaging with the community to maximize participation and impact.",
+        "module": "CT105M3"
+        }
+    ]
+    },
+    {
+    "_id": "CT106M1",
+    "name": "Foundations of Ethics",
+    "description": "Exploration of foundational concepts in ethics and their application in civic technology.",
+    "course": "CT106",
+    "lessons": [
+        {
+        "_id": "CT106L1",
+        "name": "Ethical Theories",
+        "description": "Introduction to major ethical theories and frameworks, including utilitarianism, deontology, and virtue ethics.",
+        "module": "CT106M1"
+        },
+        {
+        "_id": "CT106L2",
+        "name": "Ethical Decision Making",
+        "description": "Guidance on ethical decision-making processes and tools for evaluating ethical dilemmas in civic technology.",
+        "module": "CT106M1"
+        },
+        {
+        "_id": "CT106L3",
+        "name": "Ethical Codes and Guidelines",
+        "description": "Overview of ethical codes and guidelines relevant to the practice of civic technology and digital ethics.",
+        "module": "CT106M1"
+        }
+    ]
+    },
+    {
+    "_id": "CT106M2",
+    "name": "Privacy and Data Protection",
+    "description": "Exploration of privacy principles, regulations, and best practices in civic technology.",
+    "course": "CT106",
+    "lessons": [
+        {
+        "_id": "CT106L4",
+        "name": "Privacy Fundamentals",
+        "description": "Understanding core concepts of privacy, data protection, and information security.",
+        "module": "CT106M2"
+        },
+        {
+        "_id": "CT106L5",
+        "name": "Privacy Laws and Regulations",
+        "description": "Overview of privacy laws and regulations governing the collection, use, and sharing of personal data.",
+        "module": "CT106M2"
+        },
+        {
+        "_id": "CT106L6",
+        "name": "Privacy by Design",
+        "description": "Integration of privacy considerations into the design and development of civic technology products and services.",
+        "module": "CT106M2"
+        }
+    ]
+    },
+    {
+    "_id": "CT106M3",
+    "name": "Ethical Challenges in Civic Technology",
+    "description": "Examination of ethical challenges and dilemmas faced by practitioners and policymakers in the field of civic technology.",
+    "course": "CT106",
+    "lessons": [
+        {
+        "_id": "CT106L7",
+        "name": "Algorithmic Bias and Fairness",
+        "description": "Discussion of algorithmic bias, fairness, and transparency in civic technology applications.",
+        "module": "CT106M3"
+        },
+        {
+        "_id": "CT106L8",
+        "name": "Surveillance and Civil Liberties",
+        "description": "Exploration of issues related to surveillance, civil liberties, and government accountability in the digital age.",
+        "module": "CT106M3"
+        },
+        {
+        "_id": "CT106L9",
+        "name": "Ethics in Policy Making",
+        "description": "Analysis of ethical considerations in policy making and governance of civic technology initiatives.",
+        "module": "CT106M3"
+        }
+    ]
+    },
+    {
+    "_id": "CT107M1",
+    "name": "Introduction to Community Informatics",
+    "description": "An overview of the field of community informatics and its role in promoting digital inclusion and community development.",
+    "course": "CT107",
+    "lessons": [
+        {
+        "_id": "CT107L1",
+        "name": "Foundations and Principles",
+        "description": "Exploration of foundational concepts and principles in community informatics, including digital equity, access, and participation.",
+        "module": "CT107M1"
+        },
+        {
+        "_id": "CT107L2",
+        "name": "Community Technology Centers",
+        "description": "Discussion of community technology centers as hubs for digital literacy, skill development, and community engagement.",
+        "module": "CT107M1"
+        },
+        {
+        "_id": "CT107L3",
+        "name": "Digital Inclusion Initiatives",
+        "description": "Analysis of digital inclusion initiatives aimed at bridging the digital divide and empowering underserved communities.",
+        "module": "CT107M1"
+        }
+    ]
+    },
+    {
+    "_id": "CT107M2",
+    "name": "Community Networks and Online Communities",
+    "description": "Exploration of community-driven networks and online platforms as tools for social interaction, collaboration, and collective action.",
+    "course": "CT107",
+    "lessons": [
+        {
+        "_id": "CT107L4",
+        "name": "Community Networks",
+        "description": "Understanding the concept of community networks and their role in fostering digital connectivity and community resilience.",
+        "module": "CT107M2"
+        },
+        {
+        "_id": "CT107L5",
+        "name": "Online Community Building",
+        "description": "Strategies for building and sustaining online communities, including community moderation, content curation, and engagement.",
+        "module": "CT107M2"
+        },
+        {
+        "_id": "CT107L6",
+        "name": "Digital Advocacy and Mobilization",
+        "description": "Exploration of digital advocacy and mobilization efforts within online communities for social change and collective action.",
+        "module": "CT107M2"
+        }
+    ]
+    },
+    {
+    "_id": "CT107M3",
+    "name": "Community Informatics Applications",
+    "description": "Practical applications of community informatics in various domains, including education, healthcare, urban planning, and environmental sustainability.",
+    "course": "CT107",
+    "lessons": [
+        {
+        "_id": "CT107L7",
+        "name": "Education and Lifelong Learning",
+        "description": "Integration of community informatics tools and practices in education and lifelong learning initiatives.",
+        "module": "CT107M3"
+        },
+        {
+        "_id": "CT107L8",
+        "name": "Healthcare Access and Telemedicine",
+        "description": "Utilization of community informatics solutions to improve healthcare access, telemedicine, and public health outcomes.",
+        "module": "CT107M3"
+        },
+        {
+        "_id": "CT107L9",
+        "name": "Urban Planning and Smart Communities",
+        "description": "Role of community informatics in urban planning, smart city development, and the creation of inclusive and sustainable communities.",
+        "module": "CT107M3"
+        }
+    ]
+    },
+    {
+        "_id": "CT108M1",
+        "name": "Smart City Concepts and Frameworks",
+        "description": "Introduction to the concepts and frameworks of smart cities, including urban planning, infrastructure development, and technology integration.",
+        "course": "CT108",
+        "lessons": [
+          {
+            "_id": "CT108L1",
+            "name": "Understanding Smart Cities",
+            "description": "Exploration of the definition and characteristics of smart cities.",
+            "module": "CT108M1"
+          },
+          {
+            "_id": "CT108L2",
+            "name": "Smart City Components",
+            "description": "Analysis of key components and elements that make up a smart city ecosystem.",
+            "module": "CT108M1"
+          },
+          {
+            "_id": "CT108L3",
+            "name": "Smart City Frameworks",
+            "description": "Overview of frameworks and models for planning and developing smart cities.",
+            "module": "CT108M1"
+          }
+        ]
+      },
+      {
+        "_id": "CT108M2",
+        "name": "Urban Innovation and Sustainability",
+        "description": "Exploration of innovative solutions and strategies for promoting sustainability and resilience in urban environments.",
+        "course": "CT108",
+        "lessons": [
+          {
+            "_id": "CT108L4",
+            "name": "Green Infrastructure",
+            "description": "Study of green infrastructure and sustainable urban planning practices.",
+            "module": "CT108M2"
+          },
+          {
+            "_id": "CT108L5",
+            "name": "Renewable Energy Integration",
+            "description": "Integration of renewable energy sources into urban infrastructure for sustainable development.",
+            "module": "CT108M2"
+          },
+          {
+            "_id": "CT108L6",
+            "name": "Resilience Planning",
+            "description": "Strategies for enhancing urban resilience to environmental and social challenges.",
+            "module": "CT108M2"
+          }
+        ]
+      },
+      {
+        "_id": "CT108M3",
+        "name": "Smart Mobility and Transportation",
+        "description": "Exploration of smart mobility solutions and innovative transportation systems for efficient urban mobility.",
+        "course": "CT108",
+        "lessons": [
+          {
+            "_id": "CT108L7",
+            "name": "Intelligent Transportation Systems",
+            "description": "Introduction to intelligent transportation systems and their role in improving urban mobility.",
+            "module": "CT108M3"
+          },
+          {
+            "_id": "CT108L8",
+            "name": "Public Transportation Innovations",
+            "description": "Innovative approaches to public transportation systems for enhanced accessibility and efficiency.",
+            "module": "CT108M3"
+          },
+          {
+            "_id": "CT108L9",
+            "name": "Connected and Autonomous Vehicles",
+            "description": "Exploration of connected and autonomous vehicle technologies and their impact on urban transportation.",
+            "module": "CT108M3"
+          }
+        ]
+      },
+      {
+        "_id": "CT109M1",
+        "name": "Digital Campaign Strategies",
+        "description": "Exploration of digital campaign strategies and tactics used in political mobilization.",
+        "course": "CT109",
+        "lessons": [
+          {
+            "_id": "CT109L1",
+            "name": "Social Media Campaigning",
+            "description": "Analysis of social media platforms and their role in political campaigning and mobilization.",
+            "module": "CT109M1"
+          },
+          {
+            "_id": "CT109L2",
+            "name": "Email Marketing and Fundraising",
+            "description": "Utilization of email marketing and fundraising techniques in political campaigns.",
+            "module": "CT109M1"
+          },
+          {
+            "_id": "CT109L3",
+            "name": "Online Advertising",
+            "description": "Strategies for effective online advertising campaigns to reach and engage voters.",
+            "module": "CT109M1"
+          }
+        ]
+      },
+      {
+        "_id": "CT109M2",
+        "name": "Data Analytics in Political Campaigns",
+        "description": "Exploration of data analytics techniques and tools used for voter targeting and campaign optimization.",
+        "course": "CT109",
+        "lessons": [
+          {
+            "_id": "CT109L4",
+            "name": "Voter Data Analysis",
+            "description": "Analysis of voter data for targeting and segmenting voter demographics.",
+            "module": "CT109M2"
+          },
+          {
+            "_id": "CT109L5",
+            "name": "Predictive Modeling",
+            "description": "Application of predictive modeling techniques to forecast election outcomes and voter behavior.",
+            "module": "CT109M2"
+          },
+          {
+            "_id": "CT109L6",
+            "name": "Data Visualization in Campaigning",
+            "description": "Visualization of campaign data to communicate insights and inform decision-making.",
+            "module": "CT109M2"
+          }
+        ]
+      },
+      {
+        "_id": "CT109M3",
+        "name": "Ethics and Regulation in Political Mobilization",
+        "description": "Examination of ethical considerations and regulatory frameworks governing political mobilization in the digital age.",
+        "course": "CT109",
+        "lessons": [
+          {
+            "_id": "CT109L7",
+            "name": "Privacy and Data Protection",
+            "description": "Considerations of privacy and data protection in political campaign strategies and voter outreach.",
+            "module": "CT109M3"
+          },
+          {
+            "_id": "CT109L8",
+            "name": "Transparency and Accountability",
+            "description": "Importance of transparency and accountability in political advertising and campaign financing.",
+            "module": "CT109M3"
+          },
+          {
+            "_id": "CT109L9",
+            "name": "Regulatory Compliance",
+            "description": "Compliance with regulations and laws governing political campaigns, fundraising, and advertising.",
+            "module": "CT109M3"
+          }
+        ]
+      },
+      {
+        "_id": "CT110M1",
+        "name": "User-Centered Design Principles",
+        "description": "Introduction to user-centered design principles and methodologies for digital service development.",
+        "course": "CT110",
+        "lessons": [
+          {
+            "_id": "CT110L1",
+            "name": "Understanding User Needs",
+            "description": "Techniques for understanding user needs and preferences in digital service design.",
+            "module": "CT110M1"
+          },
+          {
+            "_id": "CT110L2",
+            "name": "User Research Methods",
+            "description": "Exploration of user research methods, including interviews, surveys, and usability testing.",
+            "module": "CT110M1"
+          },
+          {
+            "_id": "CT110L3",
+            "name": "Personas and User Stories",
+            "description": "Creation of personas and user stories to inform the design process and prioritize features.",
+            "module": "CT110M1"
+          }
+        ]
+      },
+      {
+        "_id": "CT110M2",
+        "name": "Prototyping and Iterative Design",
+        "description": "Development of prototypes and iterative design processes for refining digital service concepts.",
+        "course": "CT110",
+        "lessons": [
+          {
+            "_id": "CT110L4",
+            "name": "Prototyping Tools and Techniques",
+            "description": "Use of prototyping tools and techniques to create interactive prototypes.",
+            "module": "CT110M2"
+          },
+          {
+            "_id": "CT110L5",
+            "name": "Iterative Design Process",
+            "description": "Iterative design process for refining prototypes based on user feedback and testing.",
+            "module": "CT110M2"
+          },
+          {
+            "_id": "CT110L6",
+            "name": "Usability Testing",
+            "description": "Conducting usability testing to evaluate digital service prototypes and identify areas for improvement.",
+            "module": "CT110M2"
+          }
+        ]
+      },
+      {
+        "_id": "CT110M3",
+        "name": "Implementation and Deployment",
+        "description": "Guidance on implementing and deploying digital services, considering technical, organizational, and user adoption factors.",
+        "course": "CT110",
+        "lessons": [
+          {
+            "_id": "CT110L7",
+            "name": "Technical Infrastructure",
+            "description": "Considerations for designing and implementing the technical infrastructure for digital services.",
+            "module": "CT110M3"
+          },
+          {
+            "_id": "CT110L8",
+            "name": "Change Management",
+            "description": "Strategies for managing organizational change and stakeholder engagement during digital service deployment.",
+            "module": "CT110M3"
+          },
+          {
+            "_id": "CT110L9",
+            "name": "User Adoption and Training",
+            "description": "Approaches for promoting user adoption and providing training for digital service users.",
+            "module": "CT110M3"
+          }
+        ]
+      }
+  ]
+  
