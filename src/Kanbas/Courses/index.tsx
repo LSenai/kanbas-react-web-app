@@ -1,7 +1,5 @@
-import { courses } from "../../Kanbas/Database";
-import { Link, Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
-import { HiMiniBars3 } from "react-icons/hi2";
-import CourseNavigation from "./Navigation";
+import { Navigate, Route, Routes } from "react-router-dom";
+import CourseHeader from "./CourseHeader";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
@@ -9,17 +7,10 @@ import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
 function Courses() {
-    const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
-    const { pathname } = useLocation();
-    let currentSubPage = pathname.split("/").pop();
-    currentSubPage = currentSubPage?.replace(/%20/g, " ");
 
     return (
         <div>
-            <h1 className="d-none d-md-block"><HiMiniBars3 /> {course?.number} {course?.name} &gt; {currentSubPage}
-            </h1>
-            <CourseNavigation />
+            <CourseHeader />         
             <div>
                 <div className = "overflow-y-scroll position-fixed bottom-0 end-0 " style={{left: "320px", top: "50px" }}>
                     <Routes>

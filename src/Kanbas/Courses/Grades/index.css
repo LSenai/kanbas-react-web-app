@@ -1,0 +1,14 @@
+.wd-grades-main {
+    margin-top: 25px;
+    margin-left: 5px;
+    
+}
+.wd-grades-cells {
+    width: auto;
+}
+
+.wd-grades-cells input {
+    max-width: 100px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,12 @@
+.wd-course-menu-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.wd-course-menu-icon:hover {
+    transform: scale(1.1);
+}
+
+.wd-course-menu-icon:active {
+    transform: scale(0.9);
+}
