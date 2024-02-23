@@ -8,8 +8,12 @@ I'll be updating the README as we go!
 
 ## Getting Started
 
+### V1
+
 The vanilla HTML version is deployed on netlify: https://comfy-bonbon-d2bf33.netlify.app/kanbas/courses/home/screen
 
+### V2
 V2 with CSS is up: https://assignment-2--comfy-bonbon-d2bf33.netlify.app/kanbas/dashboard/screen
 
-In the next version, we'll starting weaving in some JavaScript!
+### v3
+Here's the latest deployment. We've got the beginnings of a single page application! Up next, we'll start incorporating more state management, and eventually, a proper relational DB. https://assignment-3--comfy-bonbon-d2bf33.netlify.app/#/Kanbas
