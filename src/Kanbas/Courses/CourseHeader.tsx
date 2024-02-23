@@ -16,21 +16,25 @@ function CourseHeader() {
     const toggleMenu = () => setMenuVisible(!menuVisible);
 
     return (
-        <div>
-            {/* Rendering course info and button */}
-            {course && (
-                <h1 className="d-none d-md-block">
-                    <span><HiMenu onClick={toggleMenu} className='wd-course-menu-icon'/></span> {course.number} {course.name} &gt; {currentSubPage}
-                </h1>
-            )}
-            {/* Button to toggle the course navigation menu */}
-            <button className="btn btn-link d-none d-md-none className='wd-course-menu-icon" onClick={toggleMenu}>
-                            <HiMenu />
-            </button>
+        <>
+            <div >
+                {/* Rendering course info and button */}
+                {course && (
+                    <h1 className="d-none d-md-block">
+                        <span><HiMenu onClick={toggleMenu} className='wd-course-menu-icon'/></span> {course.number} {course.name} &gt; {currentSubPage}
+                    </h1>
+                )}
+                {/* Button to toggle the course navigation menu */}
+                <button className="btn btn-link d-none d-md-none className='wd-course-menu-icon" onClick={toggleMenu}>
+                                <HiMenu />
+                </button>
 
-            {/* Course navigation menu */}
-            {menuVisible && <CourseNavigation />}
-        </div>
+            </div>
+            <div>
+                {/* Course navigation menu */}
+                {menuVisible && <CourseNavigation />}
+            </div>
+        </>
     );
 }
 export default CourseHeader;

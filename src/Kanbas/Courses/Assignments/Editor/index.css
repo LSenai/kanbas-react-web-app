@@ -1,0 +1,15 @@
+.wd-assign-to-row {
+    align-items: center;
+    border: 1px solid #cecece;
+    border-radius: 5%;
+    border-spacing: 5px;
+    padding-bottom: 5px;
+}
+
+.wd-assignment-editor-main{
+    max-width: 60%;
+}
+
+.wd-editor-fields * {
+    margin-top: 2px;
+}
