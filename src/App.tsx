@@ -14,6 +14,7 @@ function App() {
           <Route path="/Labs/*"       element={<Labs/>}/>
           <Route path="/Kanbas/*"     element={<Kanbas/>}/>
           <Route path="/hello/*"      element={<HelloWorld/>} />
+          <Route path="/" element={<Navigate to="/Labs" />} />
         </Routes>
       </div>
     </HashRouter>   
