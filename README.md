@@ -1,6 +1,7 @@
 # Kanbas - Learning Management System (LMS) Project
 ## Starting to add some JavaScript
-netlify link coming soon. 
+Here's the latest deployment. We've got the beginnings of a single page application! Up next, we'll start incorporating more state management, and eventually, a proper relational DB. 
+https://assignment-3--comfy-bonbon-d2bf33.netlify.app/#/Kanbas
 
 ## Overview
 
