@@ -79,7 +79,7 @@ function ModuleList() {
                 ))}
 
 
-
+                // keeping this around for now because there are some features I may want to keep
                 {/* {modulesList.map((module, index) => (
                     <li key={index} className="list-group-item" onClick={() => setSelectedModule(module)}>
 

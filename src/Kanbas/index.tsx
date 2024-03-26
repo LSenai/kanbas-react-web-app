@@ -37,7 +37,6 @@ function Kanbas() {
     );
   };
 
-
     return (
       <Provider store={store}>
         <div className="d-flex">
