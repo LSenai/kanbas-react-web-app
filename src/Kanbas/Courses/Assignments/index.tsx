@@ -1,24 +1,21 @@
 import React, {useState, useEffect} from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle, FaRegLightbulb } from "react-icons/fa";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../store";
-import { createAssignment } from "./assignmentsActions";
 import { setAssignment } from "./assignmentsReducer";
 
 function Assignments() {
     const { courseId } = useParams();
+    const dispatch = useDispatch();
+    
     const assignmentList = useSelector(
         (state: KanbasState) => state.assignmentsReducer.assignments
       );
+    
+      
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        console.log("Assignments component mounted/updated. Assignments:", assignmentList);
-    }, [assignmentList]);
 
     return (
         <div className="row wd-assignments-main col-md-8">
