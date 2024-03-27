@@ -1,6 +1,8 @@
 # Kanbas - Learning Management System (LMS) Project
 ## Starting to add some JavaScript
-netlify link coming soon. 
+(https://assignment-4--comfy-bonbon-d2bf33.netlify.app/#/Labs/a4)
+
+Introduced state management using Redux. Still need to iron out some kinks in the Assignments editor page, but otherwise, works as expected. 
 
 ## Overview
 
