@@ -1,63 +1,74 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { assignments } from "../../../Database";
+import { addAssignment, setAssignment, updateAssignment } from "../assignmentsReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../../store";
 import "./index.css";
 
 function AssignmentEditor() {
-    const { assignmentId } = useParams();
-    const assignment = assignments.find(
-        (assignment) => assignment._id === assignmentId
-    );
-    const { courseId } = useParams();
     const navigate = useNavigate();
-    const handleSave = () => {
-        console.log("We'll figure this out later");
+    const dispatch = useDispatch();
+
+    const { assignmentId } = useParams();
+    const { courseId } = useParams();
+    const assignment = useSelector((state: KanbasState) => state.assignmentsReducer.assignments.find((assignment) => assignment._id === assignmentId)); // Fix: Access the 'assignments' property instead of 'assignment'
+    
+    const [assignmentData, setAssignmentData] = useState({
+        _id: assignment?._id ?? "",
+        title: assignment?.title ?? '',
+        description: assignment?.description ?? '',
+        points: assignment?.points ?? 100,
+        dueDate: assignment?.dueDate ?? '2024-01-01',
+        availableFromDate: assignment?.availableFromDate ?? '2024-01-01',
+        availableUntilDate: assignment?.availableUntilDate ?? '2024-01-01',
+        course: assignment?.course ?? 'Leo101',
+    });
+
+    const save = function (assignmentPassed: any) { 
+        if (assignmentPassed === 'AddAssignment') {
+            return dispatch(addAssignment({ ...assignment, course: courseId }));
+        } else {
+            return dispatch(updateAssignment(assignment));
+        }
+        console.log("Assignment Saved. Assignment Name: ", assignmentData.title, "course ID: ", courseId);
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setAssignmentData({ ...assignmentData, [name]: value });  
     };
     return (
         <div className="row wd-assignment-editor-main">
             <div className="col-md-8 mt-4">
                 <div className="wd-editor-fields">
                     <h2>Assignment Name</h2>
-                    <input value={assignment?.title} className="form-control mb-2" />
-                    <textarea className="form-control" placeholder="Enter the assignment description here" id="assignment-name"/>
+                    <input 
+                        value={assignment?.title} 
+                        className="form-control mb-2" 
+                        name="title"
+                        onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value }))}
+                    /> 
+                    <textarea 
+                        className="form-control" 
+                        placeholder="Enter the assignment description here" 
+                        id="assignment-description"
+                        name="description"
+                        onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value }))}
+                    /> 
                     <div className="row mb-3">
                         <label htmlFor="points" className="col-sm-3 col-form-label">Points</label>
                         <div className="col-sm-9">
-                            <input className="form-control" type="number" name="points" id="points" min="0" max="100" value="100"/>
-                        </div>
-                    </div>
-                    <div className="row mb-3">
-                        <label htmlFor="assignment-group" className="col-sm-3 col-form-label">Assignment Group</label>
-                        <div className="col-sm-9">
-                            <select className="form-select" name="assignment-group" id="assignment-group">
-                                <option value="ASSIGNMENTS">ASSIGNMENTS</option>
-                                <option value="QUIZZES">QUIZZES</option>
-                                <option value="EXAMS">EXAMS</option>
-                                <option value="PROJECT">PROJECT</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="row mb-3">
-                        <label htmlFor="display-grade-as" className="col-sm-3 col-form-label">Display Grade as</label>
-                        <div className="col-sm-9">
-                            <select className="form-select" name="display-grade-as" id="display-grade-as">
-                                <option value="Percentage">Percentage</option>
-                                <option value="Points">Points</option>
-                                <option value="Complete/Incomplete">Complete/Incomplete</option>
-                                <option value="Letter Grade">Letter Grade</option>
-                                <option value="GPA Scale">GPA Scale</option>
-                                <option value="Not Graded">Not Graded</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="row mb-3">
-                        <div className="col-sm-3"></div> 
-                        <div className="col-sm-9">
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" name="count-to-finalgrade" id="count-to-finalgrade"/>
-                                <label className="form-check-label" htmlFor="count-to-finalgrade">Do not count assignment towards the final grade</label><br/>
-                            </div>
+                            <input 
+                                className="form-control" 
+                                type="number" 
+                                name="points" 
+                                id="points" 
+                                min="0" 
+                                max="100" 
+                                value="100" 
+                                onChange={(e) => dispatch(setAssignment({...assignment, points: e.target.value}))}
+                            /> 
                         </div>
                     </div>
                 </div>
@@ -66,29 +77,46 @@ function AssignmentEditor() {
                             <label>Assign</label> <br />   
                         </div>
                         <div className="col-md-6 wd-assign-to-row">
-                            Assign to
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" name="wd-assign-to" id="wd-assign-to-everyone" value="Everyone" checked={true}/>
-                                <label className="form-check-label" htmlFor="wd-assign-to-everyone">Everyone</label>
-                            </div>
                             <label>Due</label> <br />
-                            <input type="date" className="form-control" name="wd-due-date" value="2024-01-01" min="2024-01-01" max="2025-12-31"/> <br />
+                            <input 
+                                type="date" 
+                                className="form-control" 
+                                name="wd-due-date" 
+                                value="2024-01-01" 
+                                min="2024-01-01" 
+                                max="2025-12-31"
+                                onChange={(e) => dispatch(setAssignment({ ...assignment, dueDate: e.target.value }))}
+                            /> <br />
                             <div className="row">
                                 <div className="col">
                                     <label>Available From</label> <br />
-                                    <input type="date" className="form-control" name="wd-available-from" value="2024-01-01" min="2024-01-01" max="2025-12-31"/> <br />
+                                    <input 
+                                        type="date" 
+                                        className="form-control" 
+                                        name="wd-available-from" 
+                                        value="2024-01-01" 
+                                        min="2024-01-01" 
+                                        max="2025-12-31"
+                                        onChange={(e) => dispatch(setAssignment({ ...assignment, availableFromDate: e.target.value }))}
+                                    /> <br />
                                 </div>
                                 <div className="col">
                                     <label>Until</label> <br />
-                                    <input type="date" className="form-control" name="wd-until" value="2024-01-01" min="2024-01-01" max="2025-12-31"/> <br />
+                                    <input 
+                                        type="date" 
+                                        className="form-control" 
+                                        name="wd-until" 
+                                        value="2024-01-01" 
+                                        min="2024-01-01" 
+                                        max="2025-12-31"
+                                        onChange={(e) => dispatch(setAssignment({ ...assignment, availableUntilDate: e.target.value }))}
+                                    /> <br />
                                 </div>
                             </div>
-                            <button className="btn btn-secondary mt-2" style={{ width: "100%" }}>+ Add</button>
                         </div>
                     </div>
-                
 
-                <button onClick={handleSave} className="btn btn-success ms-2 mt-2 float-end">Save</button>
+                <button onClick={save} className="btn btn-success ms-2 mt-2 float-end">Save</button>
                 <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger float-end mt-2">Cancel</Link>
 
             </div>   

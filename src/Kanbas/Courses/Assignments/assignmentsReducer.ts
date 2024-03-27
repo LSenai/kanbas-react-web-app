@@ -1,11 +1,16 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import {assignments} from "../../Database";
+import exp from "constants";
+
+
+
 
 const initialState = {
   assignments: assignments,
   assignment: {
     title: 'New Assignment',
     description: 'New Assignment Description',
+    course: 'Leo101',
     dueDate: '2024-03-27',
     points: 100,
     availableFromDate: '2024-03-20',
@@ -49,4 +54,5 @@ export const {
   updateAssignment,
   deleteAssignment,
 } = assignmentsSlice.actions;
+
 export default assignmentsSlice.reducer;

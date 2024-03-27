@@ -8,14 +8,14 @@ export interface KanbasState {
     module: any;
   };
   assignmentsReducer: {
-    assignments: any;
-    selectedAssignmentId: string | null;
+    assignments: any[];
+    selectedAssignmentId: any;
   };
 }
 const store = configureStore({
   reducer: {
-    modules: modulesReducer, 
-    assignments: assignmentsReducer, 
+    modulesReducer, 
+    assignmentsReducer, 
   },
 });
 
