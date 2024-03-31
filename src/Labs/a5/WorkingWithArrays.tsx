@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+
 
 function WorkingWithArrays() {
     const API = "http://localhost:4000/a5/todos";
@@ -11,9 +13,69 @@ function WorkingWithArrays() {
         completed: false,
      });
 
+     const [todos, setTodos] = useState([]);
+
+     const fetchTodos = async() => {
+        const response = await axios.get(API);
+        setTodos(response.data)
+     };
+     const removeTodo = async(todo: any) => {
+        const response = await axios.get(`${API}/${todo.id}/delete`);
+        setTodos(response.data)
+     };
+     const fetchTodoById = async(id: number) => {
+        const response = await axios.get(`${API}/${id}`)
+        setTodo(response.data)
+     };
+     const createTodo = async() => {
+        const response = await axios.get(`${API}/create`);
+        setTodos(response.data)
+     };
+     const updateTitle = async() => {
+        const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
+        setTodos(response.data)
+     }
+
+     useEffect(() => {
+        fetchTodos();
+     }, []);
+
     return (
         <div>
             <h3>Working with Arrays</h3>
+            <h4>Fetching Arrays (using Axios)</h4>
+            <label htmlFor="todo-id-display" className="me-1"
+            title="These fields are read-only. To edit, use the input fields below">
+                Verify ID: </label>
+            <input className="mb-1" value={todo.id} id="todo-id-display" 
+            title="These fields are read-only. To edit, use the input fields below" readOnly/> <br/>
+            <label htmlFor="todo-title-display" className="me-1"
+            title="These fields are read-only. To edit, use the input fields below">
+                Verify Title: </label>
+            <input className="mb-1" value={todo.title} id="todo-title-display" 
+            title="These fields are read-only. To edit, use the input fields below" readOnly/> <br/>
+            <button className="btn btn-primary w-25 mb-1"
+            onClick={()=> createTodo()}>
+                Create Todo
+            </button> <br/>
+            <button className="btn btn-success w-25 mb-1" onClick={updateTitle}>
+                Update Title
+            </button>
+            <ul className="list-group">
+                {todos.map((todo: { id: number, title: string }) => (
+                <li key={todo.id} className="list-group-item w-25">
+                    <button className="float-end btn btn-danger"
+                    onClick={() => removeTodo(todo)}>
+                        Remove
+                    </button>
+                    <button className="float-end btn btn-warning mx-2"
+                    onClick={()=> fetchTodoById(todo.id)}>
+                        Edit
+                    </button>
+                    {todo.title}
+                </li>
+                ))}
+            </ul>
             <input type="number" value={todo.id}
                 onChange={(e) => setTodo({ ...todo,
                     id: parseInt(e.target.value) })}
@@ -72,8 +134,6 @@ function WorkingWithArrays() {
             <a href={`${API}/${todo.id}/delete`} className="btn btn-primary">
                 Delete Todo with ID = {todo.id}
             </a>
-
-
         </div>
     );
 };
