@@ -1,6 +1,5 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";  
 import { Link } from 'react-router-dom';
-import * as db from '../Database';
 
 interface Course {
   _id: string;
@@ -109,7 +108,7 @@ function Dashboard( {courses, course, setCourse, addNewCourse, deleteCourse, upd
               {courses.map((course: Course) => (
                 <div key={course._id} className="col" style={{ width: 300 }}>
                   <div className="card">
-                    <img src={`../../../images/${course.image}`} className="card-img-top"
+                    <img src={`../../../images/get$.jpg`} className="card-img-top"
                          style={{ height: 150 }}/>
                          
                     <div className="card-body">

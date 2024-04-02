@@ -3,13 +3,23 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
-import * as db from "./Database";
 import { useEffect, useState } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
+import axios from "axios";
 
 function Kanbas() {
-  const [courses, setCourses] = useState<any[]>(db.courses); // Start with an empty array
+  const [courses, setCourses] = useState<any[]>([]); 
+  const COURSES_API = "http://localhost:4000/api/courses";
+  const findAllCourses = async () => {
+    const response = await axios.get(COURSES_API);
+    setCourses(response.data);
+  };
+  
+  useEffect(() => {
+    findAllCourses();
+  }, [])
+
   const [course, setCourse] = useState({
       _id: "1234", name: "New Course", number: "New Number",
       startDate: "2024-01-10", endDate: "2024-05-15", image: "get$.jpg" 
