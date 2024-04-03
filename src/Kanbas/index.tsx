@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
+import CourseEditor from "./Dashboard/CourseEditor";
 import { useEffect, useState } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
@@ -15,19 +16,20 @@ function Kanbas() {
     const response = await axios.get(COURSES_API);
     setCourses(response.data);
   };
-  
+
   useEffect(() => {
     findAllCourses();
   }, [])
 
   const [course, setCourse] = useState({
       _id: "1234", name: "New Course", number: "New Number",
-      startDate: "2024-01-10", endDate: "2024-05-15", image: "get$.jpg" 
+      startDate: "2024-01-10", endDate: "2024-05-15", department: "New Department",
+      credits: 3, description: "New Description"
   }); // State for the course being edited
 
-  const addNewCourse = () => {
-    setCourses([...courses,
-    {...course, _id: new Date().getTime().toString()}]);
+  const addNewCourse = async () => {
+    const response = await axios.post(COURSES_API, course);
+    setCourses([response.data, ...courses]);
   }
 
   const deleteCourse = (courseId: string) => {
@@ -55,19 +57,10 @@ function Kanbas() {
               <Routes>
                   <Route path="/" element={<Navigate to="Dashboard" />} />
                   <Route path="Account" element={<h1>Account</h1>} />
-                  <Route path="Dashboard"element={
-                      <Dashboard
-                        courses={courses}
-                        course={course}
-                        setCourse={setCourse}
-                        addNewCourse={addNewCourse}
-                        deleteCourse={deleteCourse}
-                        updateCourse={updateCourse}
-                      />
-                    }
-              />
+                  <Route path="Dashboard"element={<Dashboard/>}/>
                   <Route path="Courses/:courseId/*" element={<Courses courses={courses}/>} />
                   <Route path="Calendar" element={<h1>Calendar</h1>} />
+                  <Route path="CourseEditor" element={<CourseEditor />} />
               </Routes>
           </div>
         </div>

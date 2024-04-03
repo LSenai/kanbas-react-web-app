@@ -1,5 +1,16 @@
+import { find } from "@reduxjs/toolkit/dist/utils";
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";  
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from 'react-router-dom';
+import { KanbasState } from "../store";
+import {
+  addCourse,
+  deleteCourse,
+  updateCourse,
+  setCourse,
+  setCourses
+} from "../Courses/coursesReducer";
+import * as utils from "./CourseEditor/courseUtilities";
 
 interface Course {
   _id: string;
@@ -7,105 +18,110 @@ interface Course {
   number: string;
   startDate: string;
   endDate: string;
-  image: string
+  department: string;
+  credits: number;
+  description: string;
 };
 
-function Dashboard( {courses, course, setCourse, addNewCourse, deleteCourse, updateCourse}: {
-  courses: Course[], 
-  course: Course, 
-  setCourse: (course: Course) => void, 
-  addNewCourse: () => void, 
-  deleteCourse: (courseId: string) => void, 
-  updateCourse: () => void;
-}) {
-  const [newCourseTitle, setNewCourseTitle] = useState(''); 
+function Dashboard() {
 
-  // Handles initiation of editing
-  const handleEdit = (courseId: string) => { 
-    const courseToEdit = courses.find((c) => c._id === courseId); 
-    if (courseToEdit) {
-        setCourse(courseToEdit); // Update state in Kanbas
+  const courses = useSelector((state: KanbasState) => state.coursesReducer.courses);
+  const dispatch = useDispatch();
+  // const [course, setCourse] = useState({
+  //   _id: "1234", name: "New Course", number: "New Number",
+  //   startDate: "2024-01-10", endDate: "2024-05-15", department: "New Department",
+  //   credits: 3, description: "New Description"
+  // }); // State for the course being edited
+
+  const course = useSelector((state: KanbasState) => state.coursesReducer.course);
+
+  // variable to trigger re-renders
+  const [renderTrigger, setRenderTrigger] = useState(0);
+
+  useEffect(() => {
+    utils.findAllCourses().then((courses) => {
+        dispatch(setCourses(courses));
+    })
+  }, [dispatch]);
+
+  const handleAddCourse = () => {
+    utils.addNewCourse(course).then((newCourse) => {
+      // Dispatch the addCourse action to update Redux store
+      dispatch(addCourse(newCourse));
+      console.log(courses)
+      
+      // Reset the course state to initial values for next entry
+      dispatch(setCourse({
+        _id: new Date().getTime().toString(),
+        name: "New Course",
+        number: "New Number",
+        startDate: "2024-01-10",
+        endDate: "2024-05-15",
+        department: "New Department",
+        credits: 3,
+        description: "New Description"
+      }));
+    })
+    .catch((error) => console.log(error));
+  }
+
+  const handleDeleteCourse = (courseId: string) => {
+    // first ask user if they're sure they want to delete the course
+    if (!window.confirm("Are you sure you want to delete this course?")) {
+      return;
     }
-    };
-  
-  // Handle new course form submission
-  const handleNewCourseSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (newCourseTitle) {
-      // We assume addNewCourse creates a course with title from newCourseTitle
-        addNewCourse(); 
-        setNewCourseTitle(''); 
-      }
-  };
+    utils.deleteCourse(courseId).then((status) => {
+        dispatch(deleteCourse(courseId))
+        // console.log(courseId)
+    })
+  }
 
-  // Handle change in new course title input
-  const handleNewCourseChange = (event: ChangeEvent<HTMLInputElement>) => {
-      setNewCourseTitle(event.target.value);
-  };
+  const [ isEditingCourse, setIsEditingCourse ] = useState(false);
+  const [ courseToEdit, setCourseToEdit ] = useState<string>('');
+  const navigate = useNavigate();
 
-  // Handle update course form submission
-  const handleUpdateCourse = (event: FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      updateCourse(); 
-      setCourse({ 
-          _id: "", 
-          name: "", 
-          number: "", 
-          startDate: "", 
-          endDate: "", 
-          image: "get$.jpg" 
-      }); // Reset the course state to default values
-    };
-    
+  const handleEditCourse = (courseId: string) => {
+    setIsEditingCourse(true);
+    setCourseToEdit(courseId);
+    dispatch(setCourse(courses.find((course: any) => course._id === courseId)));
+    navigate('/Kanbas/CourseEditor'); 
+  }
+
+
     return (
         <div className="p-4">
           <h1>Dashboard</h1>              
           <hr />
           <h2>Published Courses ({courses.length})</h2> 
           <hr />
+          <div className="w-25">
+            <input type="text" className="form-control mb-1" placeholder="Course Name" value={course.name}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, name: e.target.value}))} /> 
+            <input type="text" className="form-control mb-1" placeholder="Course Number" value={course.number}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, number: e.target.value}))} /> 
+            <input type="text" className="form-control mb-1" placeholder="Department" value={course.department}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, department: e.target.value}))} /> 
+            <input type="number" className="form-control mb-1" placeholder="Credits" value={course.credits}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, credits: parseInt(e.target.value)}))} /> 
+            <input type="text" className="form-control mb-1" placeholder="Description" value={course.description}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, description: e.target.value}))} /> 
+            <input type="date" className="form-control mb-1" placeholder="Start Date" value={course.startDate}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, startDate: e.target.value}))} /> 
+            <input
+              type="date"
+              className="form-control mb-1"
+              placeholder="End Date"
+              value={course.endDate}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({ ...course, endDate: e.target.value }))} />
+            
+            <button onClick={handleAddCourse} className="btn btn-primary">Add Course</button>
+            <Link to={'/Kanbas/CourseEditor' }><button> Add a New Course </button></Link>
+          </div>
 
-          {course._id ? ( // Check if a course is selected for editing
-          // Edit Course Form
-          <form onSubmit={handleUpdateCourse}> 
-              <div className="form-group">
-                  <label htmlFor="newCourseTitle">Course Title:</label>
-                  <input
-                      type="text"
-                      className="form-control mt-2 mb-2"
-                      style={{ maxWidth: "300px" }}
-                      id="newCourseTitle"
-                      value={course.name}
-                      onChange={(e) => 
-                          setCourse({ ...course, name: e.target.value })
-                      }
-                  />
-              </div>
-            {/* Add similar input fields for other course properties */}
-              <button type="submit" className="btn btn-primary">
-                  Update Course
-              </button>
-          </form>
-      ) : (
-          <form onSubmit={handleNewCourseSubmit}>
-            <div className="form-group">
-              <label htmlFor="newCourseTitle">New Course Title:</label>
-              <input
-                type="text"
-                className="form-control mt-2 mb-2"
-                style={{ maxWidth: "300px" }}
-                id="newCourseTitle"
-                value={newCourseTitle}
-                onChange={handleNewCourseChange}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Add Course
-            </button>
-          </form>
-      )}
+          
           <div className="row">
             <div className="row row-cols-1 row-cols-md-5 g-4">
-              {courses.map((course: Course) => (
+              {courses.map((course: any) => (
                 <div key={course._id} className="col" style={{ width: 300 }}>
                   <div className="card">
                     <img src={`../../../images/get$.jpg`} className="card-img-top"
@@ -115,11 +131,22 @@ function Dashboard( {courses, course, setCourse, addNewCourse, deleteCourse, upd
                       <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
                         style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                         {course.name} </Link>
-                      <p className="card-text">{course.name}</p>
-                      <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-primary">
-                        Go </Link>
-                      <button onClick={() => deleteCourse(course._id)} className="btn btn-danger mx-2">Delete</button> 
-                      <button onClick={() => handleEdit(course._id)} className="btn btn-warning">Edit</button>
+                      {/* <p className="card-text">{course.startDate}</p>
+                      <p className="card-text">{course.endDate}</p> */}
+                      <p></p>
+
+                      <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-primary" style={{paddingTop: '3px', paddingBottom: '4px'}}>
+                        Go 
+                      </Link>
+                      {/* <Link to={'/Kanbas/CourseEditor'}> */}
+                      <button className="btn btn-warning mx-2" style={{paddingTop: '3px', paddingBottom: '4px'}}
+                        onClick={() => handleEditCourse}>
+                        Edit </button>
+                      {/* </Link> */}
+                      <button onClick={() => handleDeleteCourse(course._id)} className="btn btn-danger" style={{paddingTop: '3px', paddingBottom: '4px'}}>
+                        Delete</button> 
+                      {/* <button onClick={() => handleEdit(course._id)} className="btn btn-warning">Edit</button> */}
+                      
                     </div>
                   </div>
                 </div>
