@@ -8,7 +8,9 @@ import {
   deleteCourse,
   updateCourse,
   setCourse,
-  setCourses
+  setCourses, 
+  setSelectedCourseId,
+  clearSelectedCourseId
 } from "../Courses/coursesReducer";
 import * as utils from "./CourseEditor/courseUtilities";
 

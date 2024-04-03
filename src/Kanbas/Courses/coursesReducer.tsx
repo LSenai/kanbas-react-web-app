@@ -15,6 +15,8 @@ const initialState = {
         credits: 3, 
         description: "New Description"
     },
+    selectedCourseId: null,
+    isEditingCourse: false   
 };
 
 const coursesSlice = createSlice({
@@ -41,7 +43,7 @@ const coursesSlice = createSlice({
                 }
             });
         },
-        
+
         setCourse: (state, action) => {
             state.course = action.payload;
         },
@@ -49,8 +51,18 @@ const coursesSlice = createSlice({
         setCourses: (state, action) => {
             state.courses = action.payload;
         },
+
+        setSelectedCourseId: (state, action) => {
+            state.selectedCourseId = action.payload;
+            state.isEditingCourse = true;
+        },
+
+        clearSelectedCourseId: (state) => {
+            state.selectedCourseId = null;
+            state.isEditingCourse = false;
+        }
     },  
 });
 
-export const {addCourse, deleteCourse, updateCourse, setCourse, setCourses} = coursesSlice.actions;
+export const {addCourse, deleteCourse, updateCourse, setCourse, setCourses, setSelectedCourseId, clearSelectedCourseId} = coursesSlice.actions;
 export default coursesSlice.reducer;
