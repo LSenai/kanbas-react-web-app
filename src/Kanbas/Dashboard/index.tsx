@@ -28,17 +28,13 @@ interface Course {
 function Dashboard() {
 
   const courses = useSelector((state: KanbasState) => state.coursesReducer.courses);
-  const dispatch = useDispatch();
-  // const [course, setCourse] = useState({
-  //   _id: "1234", name: "New Course", number: "New Number",
-  //   startDate: "2024-01-10", endDate: "2024-05-15", department: "New Department",
-  //   credits: 3, description: "New Description"
-  // }); // State for the course being edited
-
   const course = useSelector((state: KanbasState) => state.coursesReducer.course);
 
-  // variable to trigger re-renders
-  const [renderTrigger, setRenderTrigger] = useState(0);
+  const isEditingCourse = useSelector((state: KanbasState) => state.coursesReducer.isEditingCourse);
+  const selectedCourseId = useSelector((state: KanbasState) => state.coursesReducer.selectedCourseId);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     utils.findAllCourses().then((courses) => {
@@ -47,24 +43,9 @@ function Dashboard() {
   }, [dispatch]);
 
   const handleAddCourse = () => {
-    utils.addNewCourse(course).then((newCourse) => {
-      // Dispatch the addCourse action to update Redux store
-      dispatch(addCourse(newCourse));
-      console.log(courses)
-      
-      // Reset the course state to initial values for next entry
-      dispatch(setCourse({
-        _id: new Date().getTime().toString(),
-        name: "New Course",
-        number: "New Number",
-        startDate: "2024-01-10",
-        endDate: "2024-05-15",
-        department: "New Department",
-        credits: 3,
-        description: "New Description"
-      }));
-    })
-    .catch((error) => console.log(error));
+      // Make sure to clear existing editing stats
+      dispatch(clearSelectedCourseId());
+      navigate('/Kanbas/CourseEditor');
   }
 
   const handleDeleteCourse = (courseId: string) => {
@@ -78,16 +59,16 @@ function Dashboard() {
     })
   }
 
-  const [ isEditingCourse, setIsEditingCourse ] = useState(false);
-  const [ courseToEdit, setCourseToEdit ] = useState<string>('');
-  const navigate = useNavigate();
-
   const handleEditCourse = (courseId: string) => {
-    setIsEditingCourse(true);
-    setCourseToEdit(courseId);
-    dispatch(setCourse(courses.find((course: any) => course._id === courseId)));
-    navigate('/Kanbas/CourseEditor'); 
+    // get course by id
+    // set course state to the course
+    const courseToEdit = utils.findCourseById(courseId).then((course) => {
+      dispatch(setCourse(course));
+    });
+    dispatch(setSelectedCourseId(selectedCourseId));
+    navigate(`/Kanbas/CourseEditor`);
   }
+
 
 
     return (
@@ -96,7 +77,8 @@ function Dashboard() {
           <hr />
           <h2>Published Courses ({courses.length})</h2> 
           <hr />
-          <div className="w-25">
+          
+          {/* <div className="w-25">
             <input type="text" className="form-control mb-1" placeholder="Course Name" value={course.name}
               onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, name: e.target.value}))} /> 
             <input type="text" className="form-control mb-1" placeholder="Course Number" value={course.number}
@@ -118,9 +100,10 @@ function Dashboard() {
             
             <button onClick={handleAddCourse} className="btn btn-primary">Add Course</button>
             <Link to={'/Kanbas/CourseEditor' }><button> Add a New Course </button></Link>
-          </div>
+          </div> */}
 
           
+          <button className="btn btn-primary" onClick={handleAddCourse}> Add a New Course </button>
           <div className="row">
             <div className="row row-cols-1 row-cols-md-5 g-4">
               {courses.map((course: any) => (
@@ -142,7 +125,7 @@ function Dashboard() {
                       </Link>
                       {/* <Link to={'/Kanbas/CourseEditor'}> */}
                       <button className="btn btn-warning mx-2" style={{paddingTop: '3px', paddingBottom: '4px'}}
-                        onClick={() => handleEditCourse}>
+                        onClick={() => handleEditCourse(course._id)}>
                         Edit </button>
                       {/* </Link> */}
                       <button onClick={() => handleDeleteCourse(course._id)} className="btn btn-danger" style={{paddingTop: '3px', paddingBottom: '4px'}}>

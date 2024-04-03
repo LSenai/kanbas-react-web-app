@@ -14,6 +14,8 @@ export interface KanbasState {
   coursesReducer: {
     courses: any[];
     course: any;
+    selectedCourseId: any;
+    isEditingCourse: boolean;
   };
 }
 const store = configureStore({
