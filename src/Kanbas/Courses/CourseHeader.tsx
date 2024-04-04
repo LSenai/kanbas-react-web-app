@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from "react";
 import { HiMenu } from "react-icons/hi";
-import { courses } from "../../Kanbas/Database";
 import {useParams, useLocation } from "react-router-dom";
 import CourseNavigation from './Navigation';
 import './index.css';
 
 function CourseHeader() {
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    const COURSES_API = "http://localhost:4000/api/courses";
+    const [course, setCourse] = useState<any>({_id: ""});
+    const findCourseById = async (courseId: string) => {
+        const response = await axios.get(`${COURSES_API}/${courseId}`);
+        setCourse(response.data);
+    }
+    useEffect(() => {
+        findCourseById(courseId ?? '');
+    }, [courseId]);
     const { pathname } = useLocation();
     let currentSubPage = pathname.split("/").pop();
     currentSubPage = currentSubPage?.replace(/%20/g, " ");
