@@ -22,7 +22,7 @@ function Courses() {
 
     return (
         <div>
-            <CourseHeader />         
+            <CourseHeader />    
             <div>
                 <div className = "overflow-y-scroll position-fixed bottom-0 end-0 " style={{left: "325px", top: "50px" }}>
                     <Routes>

@@ -1,23 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
-import { modules } from '../../Database';
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle} from 'react-icons/fa';
 import { useParams } from 'react-router';
 import ModuleTopButtons from './ModuleTopButtons';
 import { useSelector, useDispatch } from 'react-redux';
 import{
-    addModule, deleteModule, updateModule, setModule
+    addModule, deleteModule, updateModule, setModule, setModules
     } from './reducer';
 
 import { KanbasState } from '../../store';
+import { findModulesForCourse, createModule } from './client';
 
 function ModuleList() {
     const { courseId } = useParams();
-    const modulesList = modules.filter((module) => module.course === courseId);
-    const moduleList = useSelector((state: KanbasState) => 
+
+    useEffect(() => {
+        findModulesForCourse(courseId ?? '').then((modules) => 
+            dispatch(setModules(modules))
+        );
+    }, [courseId]);
+
+    const handleAddModule = () => {
+        createModule(courseId ?? '', module).then(module => {
+            dispatch(addModule(module));
+        });
+    };
+    const modules = useSelector((state: KanbasState) => 
     state.modulesReducer.modules);
+    const modulesList = modules.filter((module) => module.course === courseId);
+    const [selectedModule, setSelectedModule] = useState<any>(modulesList[0] ?? {});
+    console.log(modulesList);
+
     const module = useSelector((state: KanbasState) => 
         state.modulesReducer.module);
+
     const dispatch = useDispatch();    
     return (
         <>
@@ -42,7 +58,8 @@ function ModuleList() {
                         className='form-control mx-2 mt-2'
                     />
                     <button className='btn btn-success p-1 mx-2 mt-2 mb-2'
-                        onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+                        onClick={handleAddModule}>
+                        {/* onClick={() => dispatch(addModule({ ...module, course: courseId }))}> */}
                             Add</button>
                     <button
                         className="btn btn-secondary p-1 mt-2 mb-2"
@@ -51,7 +68,7 @@ function ModuleList() {
                     </button>
 
                 </li>
-                {moduleList
+                {modules
                     .filter((module) => module.course === courseId)
                     .map((module, index) => (
                     <div>
