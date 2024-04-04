@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseHeader from "./CourseHeader";
 import Modules from "./Modules";

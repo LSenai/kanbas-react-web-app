@@ -78,7 +78,7 @@ function Dashboard() {
           <h2>Published Courses ({courses.length})</h2> 
           <hr />
           
-          {/* <div className="w-25">
+          <div className="w-25">
             <input type="text" className="form-control mb-1" placeholder="Course Name" value={course.name}
               onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({...course, name: e.target.value}))} /> 
             <input type="text" className="form-control mb-1" placeholder="Course Number" value={course.number}
@@ -98,12 +98,13 @@ function Dashboard() {
               value={course.endDate}
               onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch(setCourse({ ...course, endDate: e.target.value }))} />
             
-            <button onClick={handleAddCourse} className="btn btn-primary">Add Course</button>
-            <Link to={'/Kanbas/CourseEditor' }><button> Add a New Course </button></Link>
-          </div> */}
+            <button onClick={()=>dispatch(addCourse(course))} className="btn btn-primary">Add As New Course</button>
+            <button onClick={()=>dispatch(updateCourse(course))} className="btn btn-success">Save Edited Course</button>
+
+          </div>
 
           
-          <button className="btn btn-primary" onClick={handleAddCourse}> Add a New Course </button>
+          {/* <button className="btn btn-primary" onClick={handleAddCourse}> Add a New Course </button> */}
           <div className="row">
             <div className="row row-cols-1 row-cols-md-5 g-4">
               {courses.map((course: any) => (
@@ -125,7 +126,9 @@ function Dashboard() {
                       </Link>
                       {/* <Link to={'/Kanbas/CourseEditor'}> */}
                       <button className="btn btn-warning mx-2" style={{paddingTop: '3px', paddingBottom: '4px'}}
-                        onClick={() => handleEditCourse(course._id)}>
+                        // onClick={() => handleEditCourse(course._id)}>
+                        onClick={() => dispatch(setCourse(course))}>
+
                         Edit </button>
                       {/* </Link> */}
                       <button onClick={() => handleDeleteCourse(course._id)} className="btn btn-danger" style={{paddingTop: '3px', paddingBottom: '4px'}}>
