@@ -1,6 +1,19 @@
 import axios from "axios";
 
 const COURSES_API = "http://localhost:4000/api/courses";
+const MODULES_API = "http://localhost:4000/api/modules";
+
+// UPDATE MODULE
+export const updateModule = async (module: any) => {
+    const response = await axios.put(`${MODULES_API}/${module._id}`, module);
+    return response.data;
+}
+
+// DELETE MODULE
+export const deleteModule = async (moduleId: any) => {
+    const response = await axios.delete(`${MODULES_API}/${moduleId}`);
+    return response.data;
+}
 
 // CREATE MODULE
 export const createModule = async (courseId: string, module: any) => {
