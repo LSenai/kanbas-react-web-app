@@ -9,6 +9,7 @@ export interface KanbasState {
   };
   assignmentsReducer: {
     assignments: any[];
+    assignment: any;
     selectedAssignmentId: any;
   };
   coursesReducer: {

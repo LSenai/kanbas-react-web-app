@@ -40,7 +40,7 @@ function ModuleList() {
     };
     const modules = useSelector((state: KanbasState) => 
     state.modulesReducer.modules);
-    const modulesList = modules.filter((module) => module.course === courseId);
+    // const modulesList = modules.filter((module) => module.course === courseId);
     
     const [selectedModule, setSelectedModule] = useState<any>({
         _id: '',

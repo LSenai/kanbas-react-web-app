@@ -1,16 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {assignments} from "../../Database";
-import exp from "constants";
-
-
-
 
 const initialState = {
-  assignments: assignments,
+  assignments: [] as any[],
   assignment: {
+    _id: '0',
     title: 'New Assignment',
     description: 'New Assignment Description',
-    course: 'Leo101',
+    course: '',
     dueDate: '2024-03-27',
     points: 100,
     availableFromDate: '2024-03-20',
@@ -19,18 +15,21 @@ const initialState = {
 };
 
 const assignmentsSlice = createSlice({
-  name: "assignments",
+  name: "assignment",
   initialState,
   reducers: {
     addAssignment: (state, action) => {
-      state.assignments = [
-        { ...action.payload, _id: new Date().getTime().toString() },
-        ...state.assignments,
-      ];
+      state.assignments = [action.payload, ...state.assignments];
     },
+    // plural assignments
+    setAssignments: (state, action) => {
+      state.assignments = action.payload;
+    },  
+    // singular assignments
     setAssignment: (state, action) => {
-      state.assignment = { ...state.assignment, ...action.payload };
-  },  
+      state.assignment = action.payload;
+    },
+
     deleteAssignment: (state, action) => {
       state.assignments = state.assignments.filter(
         (assignment) => assignment._id !== action.payload
@@ -47,6 +46,10 @@ const assignmentsSlice = createSlice({
         });
       }
     },      
+    // should probably have this for all reducers
+    resetAssignment: (state) => {
+      state.assignment = initialState.assignment;
+    },
   },
 });
 
@@ -55,6 +58,8 @@ export const {
   setAssignment,
   updateAssignment,
   deleteAssignment,
+  setAssignments,
+  resetAssignment
 } = assignmentsSlice.actions;
 
 export default assignmentsSlice.reducer;

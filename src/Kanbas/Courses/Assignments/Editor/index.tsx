@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
+import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { addAssignment, setAssignment, updateAssignment } from "../assignmentsReducer";
+import { addAssignment, setAssignment, updateAssignment, resetAssignment, setAssignments } from "../assignmentsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
 import "./index.css";
+import * as client from "../client";
 
 function AssignmentEditor() {
     const navigate = useNavigate();
@@ -11,75 +13,55 @@ function AssignmentEditor() {
 
     const { assignmentId } = useParams();
     const { courseId } = useParams();
-    const assignment = useSelector((state: KanbasState) => state.assignmentsReducer.assignments.find((assignment) => assignment._id === assignmentId));
-    
-/*     const [assignmentData, setAssignmentData] = useState({
-        _id: assignment?._id ?? "",
-        title: assignment?.title ?? '',
-        description: assignment?.description ?? '',
-        points: assignment?.points ?? 100,
-        dueDate: assignment?.dueDate ?? '2024-01-01',
-        availableFromDate: assignment?.availableFromDate ?? '2024-01-01',
-        availableUntilDate: assignment?.availableUntilDate ?? '2024-01-01',
-        course: assignment?.course ?? 'Leo101',
-    }); */
+    const assignment = useSelector((state: KanbasState) => state.assignmentsReducer.assignment);
+    console.log(assignment);
 
-    const [formData, setFormData] = useState({
-        title: "",
-        description: "",
+    // useEffect(() => {
+    //     client.getAssignmentsForCourse(courseId ?? "")
+    //     .then((assignments) => {
+    //         dispatch(setAssignments(assignments));
+    //     });
+    // }, [courseId]);
+
+    const [selectedAssignment, setSelectedAssignment] = useState<any>({
+        _id: '0',
+        title: 'New Assignment',
+        description: 'New Assignment Description',
+        course: courseId ?? '',
+        dueDate: '2024-03-27',
         points: 100,
-        dueDate: "2024-01-01",
-        availableFromDate: "2024-01-01",
-        availableUntilDate: "2024-01-01",
-      });
-      
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-            const { name, value } = e.target;
-            setFormData({ ...formData, [name]: value });
-        };
-    
-    const saveAssignment = () => {
-            const newAssignment = { ...formData, course: courseId };
-            dispatch(addAssignment(newAssignment));
-            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-        };
-    
-    const cancel = () => {
-        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-      };
+        availableFromDate: '2024-03-20',
+        availableUntilDate: '2024-03-27',
+    });
 
-    const save = function () { 
-        if (assignmentId) {
+    const handleAddAssignment = () => {
+        client.createAssignment(courseId ?? '', assignment).then((assignment) => {
+            dispatch(addAssignment(assignment));
+        });
+    }
+    
+    const handleSave =  async () => { 
+        if (assignmentId !== '0') {
             // If assignmentId exists, it means we're updating an existing assignment
-            dispatch(updateAssignment(assignment));
+            await dispatch(updateAssignment(assignment));
+            // dispatch(resetAssignment());
         } else {
             // If assignmentId doesn't exist, it means we're adding a new assignment
-            const newAssignment = {
-                title: 'New Assignment',
-                description: 'New Assignment Description',
-                points: 100,
-                dueDate: '2024-03-27', // Update with default values as needed
-                availableFromDate: '2024-03-20', // Update with default values as needed
-                availableUntilDate: '2024-03-27', // Update with default values as needed
-                course: courseId,
-            };
-            dispatch(addAssignment(newAssignment));
+            const newAssignment = {...assignment, course: courseId}
+            dispatch(setAssignment({ newAssignment}));
+            // console.log(assignment)
+            handleAddAssignment();
+            // dispatch(resetAssignment());
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
     
-    
-
-/*     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setAssignmentData({ ...assignmentData, [name]: value });  
-      }; */
       
     return (
         <div className="row wd-assignment-editor-main">
             <div className="col-md-8 mt-4">
                 <div className="wd-editor-fields">
-                    <h2>Assignment Name</h2>
+                    <h2>Assignment Editor</h2>
                     <input 
                         value={assignment?.title} 
                         className="form-control mb-2" 
@@ -153,7 +135,7 @@ function AssignmentEditor() {
                         </div>
                     </div>
 
-                <button onClick={save} className="btn btn-success ms-2 mt-2 float-end">Save</button>
+                <button onClick={handleSave} className="btn btn-success ms-2 mt-2 float-end">Save</button>
                 <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger float-end mt-2">Cancel</Link>
 
             </div>   

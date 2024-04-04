@@ -4,19 +4,25 @@ import { Link, useParams } from "react-router-dom";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../store";
-import { setAssignment } from "./assignmentsReducer";
+import { setAssignment, setAssignments, deleteAssignment } from "./assignmentsReducer";
+import * as client from "./client";
+
 
 function Assignments() {
     const { courseId } = useParams();
     const dispatch = useDispatch();
     
-    const assignmentList = useSelector(
-        (state: KanbasState) => state.assignmentsReducer.assignments
-      );
+    useEffect(() => {
+        client.getAssignmentsForCourse(courseId ?? "")
+        .then((assignments) => {
+            console.log('test', assignments);
+            dispatch(setAssignments(assignments));
+        });
+    }, [courseId]);
     
-      
-
-
+    const assignments = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
+    // const assignmentList = assignments.filter((assignment) => assignment.course === courseId);    
+    
     return (
         <div className="row wd-assignments-main col-md-8">
             {/* <AssignmentsTopButtons/> */}
@@ -29,16 +35,19 @@ function Assignments() {
                         <div>
                             <button type="button" className="btn btn-secondary me-2 mb-2 mb-md-0">+ Group</button>
                             <Link to={`/Kanbas/Courses/${courseId}/Assignments/Editor`}
-                                onClick={() =>
-                                    dispatch(setAssignment({
-                                        title: 'New Assignment',
-                                        description: 'New Assignment Description',
-                                        points: 100,
-                                        due: '2023-03-25',
-                                        availableFrom: '2023-03-25',
-                                        until: '2023-03-25',
-                                    }))
-                                }>
+                                // onClick={() =>
+                                //     dispatch(setAssignment({
+                                //         _id: '0',
+                                //         title: 'New Assignment',
+                                //         description: 'New Assignment Description',
+                                //         course: courseId,
+                                //         dueDate: '2024-03-27',
+                                //         points: 100,
+                                //         availableFromDate: '2024-03-20',
+                                //         availableUntilDate: '2024-03-27',
+                                //     }))
+                                // }
+                            >
                                 <button type="button" className="btn btn-danger me-2 mb-2 mb-md-0">+ Assignment</button>
                             </Link>
                             <button type="button" className="btn btn-secondary me-2 mb-2 mb-md-0">︙</button>
@@ -56,8 +65,7 @@ function Assignments() {
                         </span>
                     </div>
                     <ul className="list-group ">
-                        {assignmentList
-                            .filter((assignment) => assignment.course === courseId)
+                        {assignments
                             .map((assignment, index) => (
                                 <li key={index} className="list-group-item">
                                     <FaEllipsisV className="mr-2" /> <FaRegLightbulb className="me-2" />
@@ -69,6 +77,7 @@ function Assignments() {
                                 </li>
                             ))}
                     </ul>
+
                 </li>
             </ul>
         </div>
