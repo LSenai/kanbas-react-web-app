@@ -14,6 +14,15 @@
     font-weight: bold;
 }
 
+.wd-delete-button {
+    background-color: transparent;
+    color: red
+}
+
+.wd-delete-button:hover {
+    color:rgb(126, 7, 7)
+}
+
 .wd-assignment-link {
     color: rgb(93, 93, 93);
     font-weight: bold;

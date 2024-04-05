@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { addAssignment, setAssignment, updateAssignment, resetAssignment, setAssignments } from "../assignmentsReducer";
+import { addAssignment, setAssignment, updateAssignment, resetAssignment, setAssignments, deleteAssignment } from "../assignmentsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
 import "./index.css";
@@ -13,67 +13,65 @@ function AssignmentEditor() {
 
     const { assignmentId } = useParams();
     const { courseId } = useParams();
+
+    useEffect(() => {
+        client.getAssignmentsForCourse(courseId ?? '0')
+            .then((assignments) => {
+                dispatch(setAssignments(assignments));
+            });
+    }, [courseId, dispatch]);
+
     const assignment = useSelector((state: KanbasState) => state.assignmentsReducer.assignment);
-    console.log(assignment);
-
-    // useEffect(() => {
-    //     client.getAssignmentsForCourse(courseId ?? "")
-    //     .then((assignments) => {
-    //         dispatch(setAssignments(assignments));
-    //     });
-    // }, [courseId]);
-
-    const [selectedAssignment, setSelectedAssignment] = useState<any>({
-        _id: '0',
-        title: 'New Assignment',
-        description: 'New Assignment Description',
-        course: courseId ?? '',
-        dueDate: '2024-03-27',
-        points: 100,
-        availableFromDate: '2024-03-20',
-        availableUntilDate: '2024-03-27',
-    });
 
     const handleAddAssignment = () => {
         client.createAssignment(courseId ?? '', assignment).then((assignment) => {
             dispatch(addAssignment(assignment));
         });
     }
+
+    const handleUpdateAssignment = async () => {
+        const status = await client.updateAssignment(assignment);
+        dispatch(updateAssignment(assignment));
+    }
     
     const handleSave =  async () => { 
-        if (assignmentId !== '0') {
-            // If assignmentId exists, it means we're updating an existing assignment
-            await dispatch(updateAssignment(assignment));
-            // dispatch(resetAssignment());
+        if (assignmentId !== 'Editor') {
+            handleUpdateAssignment();
         } else {
-            // If assignmentId doesn't exist, it means we're adding a new assignment
-            const newAssignment = {...assignment, course: courseId}
-            dispatch(setAssignment({ newAssignment}));
-            // console.log(assignment)
             handleAddAssignment();
-            // dispatch(resetAssignment());
+            dispatch(resetAssignment());
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
+
+    // there's some issue with this function
+    // it's not deleting the assignment -- still appears when I navigate back. 
+
+    const handleDeleteAssignment = (assignmentId: string) => {
+        // ask user to confirm
+        if (!window.confirm("Are you sure you want to delete this assignment?")) {
+            return;
+        }
+        client.deleteAssignment(assignmentId).then((status) => {
+            dispatch(deleteAssignment(assignmentId));
+            // wait for the delete to complete - - 1 second
+            setTimeout(() => {
+                navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+            }, 1000);
+        });
+    }
     
-      
     return (
         <div className="row wd-assignment-editor-main">
             <div className="col-md-8 mt-4">
                 <div className="wd-editor-fields">
                     <h2>Assignment Editor</h2>
+                    <p>{JSON.stringify(assignment, null, 2)}</p>
                     <input 
                         value={assignment?.title} 
                         className="form-control mb-2" 
                         name="title"
                         onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value }))}
-                    /> 
-                    <textarea 
-                        className="form-control" 
-                        placeholder="Enter the assignment description here" 
-                        id="assignment-description"
-                        name="description"
-                        onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value }))}
                     /> 
                     <div className="row mb-3">
                         <label htmlFor="points" className="col-sm-3 col-form-label">Points</label>
@@ -85,7 +83,7 @@ function AssignmentEditor() {
                                 id="points" 
                                 min="0" 
                                 max="100" 
-                                value="100" 
+                                value={assignment.points} 
                                 onChange={(e) => dispatch(setAssignment({...assignment, points: e.target.value}))}
                             /> 
                         </div>
@@ -101,7 +99,7 @@ function AssignmentEditor() {
                                 type="date" 
                                 className="form-control" 
                                 name="wd-due-date" 
-                                value="2024-01-01" 
+                                value={assignment?.dueDate} 
                                 min="2024-01-01" 
                                 max="2025-12-31"
                                 onChange={(e) => dispatch(setAssignment({ ...assignment, dueDate: e.target.value }))}
@@ -113,7 +111,7 @@ function AssignmentEditor() {
                                         type="date" 
                                         className="form-control" 
                                         name="wd-available-from" 
-                                        value="2024-01-01" 
+                                        value={assignment?.availableFromDate}
                                         min="2024-01-01" 
                                         max="2025-12-31"
                                         onChange={(e) => dispatch(setAssignment({ ...assignment, availableFromDate: e.target.value }))}
@@ -125,7 +123,7 @@ function AssignmentEditor() {
                                         type="date" 
                                         className="form-control" 
                                         name="wd-until" 
-                                        value="2024-01-01" 
+                                        value={assignment?.availableUntilDate} 
                                         min="2024-01-01" 
                                         max="2025-12-31"
                                         onChange={(e) => dispatch(setAssignment({ ...assignment, availableUntilDate: e.target.value }))}
@@ -134,7 +132,8 @@ function AssignmentEditor() {
                             </div>
                         </div>
                     </div>
-
+                
+                {/* <button onClick={() => handleDeleteAssignment(assignment.assignmentId)} className="btn btn-danger mt-2">Delete</button> */}
                 <button onClick={handleSave} className="btn btn-success ms-2 mt-2 float-end">Save</button>
                 <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger float-end mt-2">Cancel</Link>
 
