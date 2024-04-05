@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
 function EncodingParametersInURLs() {
+    const API_BASE = process.env.REACT_APP_API_BASE;
 
-    const a5API = "http://localhost:4000/a5/"; 
+    const a5API = `${API_BASE}/a5/`;
 
     const [a, setA] = useState(34);
     const [b, setB] = useState(23);
@@ -11,7 +12,7 @@ function EncodingParametersInURLs() {
     const [result, setResult] = useState(0);
     const fetchSum = async (a: number, b: number) => {
         const response = await
-            axios.get(`http://localhost:4000/a5/add/${a}/${b}`);
+            axios.get(`${API_BASE}/a5/add/${a}/${b}`);
         setResult(response.data);
     };
     const fetchSubtraction = async (a: number, b: number) => {
@@ -23,7 +24,7 @@ function EncodingParametersInURLs() {
     const [welcome, setWelcome] = useState("");
     const fetchWelcome = async() => {
         const response = await
-        axios.get("http://localhost:4000/a5/welcome");
+        axios.get(`${API_BASE}/a5/welcome`);
         setWelcome(response.data);
     };
 
@@ -67,36 +68,36 @@ function EncodingParametersInURLs() {
 
 
             <h3>Path Parameters</h3>
-            <a href={`http://localhost:4000/a5/add/${a}/${b}`}>
+            <a href={`${API_BASE}/a5/add/${a}/${b}`}>
                 <button className='btn btn-primary'>Add {a} + {b}</button>
             </a>
-            <a href={`http://localhost:4000/a5/subtract/${a}/${b}`}>
+            <a href={`${API_BASE}/a5/subtract/${a}/${b}`}>
                 <button className='btn btn-danger mx-2'>Subtract {a} - {b}</button>
             </a>
 
-            <a href={`http://localhost:4000/a5/multiply/${a}/${b}`}>
+            <a href={`${API_BASE}/a5/multiply/${a}/${b}`}>
                 <button className='btn btn-success me-2'>Multiply {a} * {b}</button>
             </a>
 
-            <a href={`http://localhost:4000/a5/divide/${a}/${b}`}>
+            <a href={`${API_BASE}/a5/divide/${a}/${b}`}>
                 <button className='btn btn-info me-2'>Divide {a} / {b}</button>
             </a>
 
             <h3>Query Parameters</h3>
             <a className="btn btn-primary"
-                href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}>
+                href={`${API_BASE}/a5/calculator?operation=add&a=${a}&b=${b}`}>
                     Add {a} + {b}
                 </a>
             <a className="btn btn-danger mx-2"
-                href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}>
+                href={`${API_BASE}/a5/calculator?operation=subtract&a=${a}&b=${b}`}>
                     Subtract {a} - {b}
                 </a>
             <a className="btn btn-success me-2"
-                href={`htt[://localhost:4000/a5/calculator?operation=multiply&a=${a}&b=${b}]`}>
+                href={`${API_BASE}/a5/calculator?operation=multiply&a=${a}&b=${b}`}>
                     Multiply {a} * {b}
                 </a>
             <a className="btn btn-info me-2"
-                href={`htt[://localhost:4000/a5/calculator?operation=multiply&a=${a}&b=${b}]`}>
+                href={`${API_BASE}/a5/calculator?operation=multiply&a=${a}&b=${b}`}>
                     Divide {a} / {b} 
                 </a>
         </div>
