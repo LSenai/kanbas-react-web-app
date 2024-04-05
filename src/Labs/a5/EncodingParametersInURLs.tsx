@@ -97,7 +97,7 @@ function EncodingParametersInURLs() {
                     Multiply {a} * {b}
                 </a>
             <a className="btn btn-info me-2"
-                href={`${API_BASE}/a5/calculator?operation=multiply&a=${a}&b=${b}`}>
+                href={`${API_BASE}/a5/calculator?operation=divide&a=${a}&b=${b}`}>
                     Divide {a} / {b} 
                 </a>
         </div>
