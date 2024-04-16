@@ -5,7 +5,9 @@
       "number": "CT4550",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "01-civic-tech.png"
+      "image": "01-civic-tech.png",
+      "credits": 4, 
+      "description": "This course provides an introduction to the field of civic technology, which is the application of technology to address public challenges. Students will learn about the history of civic technology, the role of government in technology, and the impact of technology on society. The course will also cover topics such as data analysis, open government, digital democracy, and ethics in civic technology. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of civic technology."
     },
     {
       "_id": "CT102",
@@ -13,7 +15,9 @@
       "number": "CT4560",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "02-data-analysis.png"
+      "image": "02-data-analysis.png",
+      "credits": 4, 
+      "description": "Students will learn how to collect, analyze, and interpret data to inform decision-making in the public sector. The course will cover topics such as data visualization, statistical analysis, and data-driven decision-making. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of data analysis for public policy."
     },
     {
       "_id": "CT103",
@@ -21,7 +25,9 @@
       "number": "CT4570",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "03-opengov.png"
+      "image": "03-opengov.png",
+      "credits": 4, 
+      "description": "Students will learn about the principles of open government, the role of technology in promoting transparency, and the impact of open government on society. The course will cover topics such as open data, civic engagement, and government accountability. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of open government and transparency."
     },
     {
       "_id": "CT104",
@@ -29,7 +35,9 @@
       "number": "CT4580",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "04-participatory.png"
+      "image": "04-participatory.png",
+      "credits": 4, 
+      "description": "Students will learn about the role of technology in promoting democracy, the impact of digital tools on political participation, and the challenges of participatory governance. The course will cover topics such as e-voting, online deliberation, and digital activism. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of digital democracy and participatory governance."
     },
     {
       "_id": "CT105",
@@ -37,7 +45,9 @@
       "number": "CT4590",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "05-hacktiv.png"
+      "image": "05-hacktiv.png",
+      "credits": 4, 
+      "description": "Students will learn about the history of hacking, the role of technology in social change, and the ethics of hacktivism. The course will cover topics such as open source software, digital security, and hacktivist campaigns. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of civic hacking and hacktivism."
     },
     {
       "_id": "CT106",
@@ -45,7 +55,9 @@
       "number": "CT4600",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "06-ethics.png"
+      "image": "06-ethics.png",
+      "credits": 4, 
+      "description": "Students will learn about the ethical issues related to technology, the role of privacy in the digital age, and the impact of technology on society. The course will cover topics such as data ethics, surveillance, and digital rights. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of ethics and privacy in civic technology."
     },
     {
       "_id": "CT107",
@@ -53,7 +65,9 @@
       "number": "CT4610",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "07-informatics.png"
+      "image": "07-informatics.png",
+      "credits": 4, 
+      "description": "Students will learn about the role of technology in community development, the impact of digital tools on social change, and the challenges of community informatics. The course will cover topics such as digital inclusion, community networks, and participatory research. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of community informatics."
     },
     {
       "_id": "CT108",
@@ -61,7 +75,9 @@
       "number": "CT4620",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "08-smartcity.png"
+      "image": "08-smartcity.png",
+      "credits": 4, 
+      "description": "Students will learn about the concept of smart cities, the role of technology in urban innovation, and the impact of smart city initiatives on society. The course will cover topics such as urban planning, digital infrastructure, and civic tech startups. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of smart cities and urban innovation."
     },
     {
       "_id": "CT109",
@@ -69,7 +85,9 @@
       "number": "CT4630",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "09-mobilization.png"
+      "image": "09-mobilization.png",
+      "credits": 4, 
+      "description": "Students will learn about the role of technology in political mobilization, the impact of digital tools on social movements, and the challenges of online activism. The course will cover topics such as social media, digital campaigns, and online advocacy. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of political mobilization in the digital age."
     },
     {
       "_id": "CT110",
@@ -77,7 +95,9 @@
       "number": "CT4640",
       "startDate": "2024-01-10",
       "endDate": "2024-05-15",
-      "image": "10-design.png"
+      "image": "10-design.png",
+      "credits": 4, 
+      "description": "Students will learn about the principles of service design, the role of technology in service delivery, and the impact of digital services on society. The course will cover topics such as user experience, agile development, and human-centered design. Students will have the opportunity to work on real-world projects and develop the skills needed to be successful in the field of digital service design and delivery."
     }
   ]
   
