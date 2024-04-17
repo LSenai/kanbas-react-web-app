@@ -6,7 +6,26 @@ import { User } from "./client";
 import { FaPlus, FaCheckCircle } from 'react-icons/fa';
 import { AxiosError } from "axios";
 
+// probably wanna handle deleting yourself as a user?? 
+
 export default function UserTable() {
+    const [role, setRole] = useState<string>("USER");
+
+    const fetchUsersByRole = async (selectedRole: string) => {
+        try {
+            let users;
+            if (selectedRole === "ALL") {
+                users = await client.findAllUsers(); 
+            } else {
+                users = await client.findUsersByRole(selectedRole);
+            }
+            setUsers(users);
+        } catch (error) {
+            console.error("Error fetching users by role:", error);
+            alert("Failed to fetch users");
+        }
+    };
+
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
         _id: "",
@@ -106,6 +125,17 @@ export default function UserTable() {
 
     return (
     <div className="container mt-4">
+        {/* Filter users by role option */}
+        <select
+            onChange={(e) => fetchUsersByRole(e.target.value)}
+            value = {role || "USER"}
+            className="form-control float-end w-25">
+            <option value="ALL">All</option>
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+            <option value="FACULTY">Faculty</option>
+            <option value="STUDENT">Student</option>
+        </select>
         <h1>User Table</h1>
         <div className="table-responsive">
         <table className="table table-hover table-striped">
@@ -134,6 +164,7 @@ export default function UserTable() {
                             <input
                                 className="form-control me-2"
                                 style={{flex: 1}}
+                                placeholder="Username"
                                 value={user.username}
                                 onChange={(e) => setUser({ ...user, username: e.target.value })}
                             />

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { User } from './client';
 import * as client from './client';
@@ -17,28 +17,43 @@ export default function Signin() {
     const navigate = useNavigate();
 
     const [error, setError] = useState();
-    const signin = async () => {
+    const signin = async (event: FormEvent) => {
+        event.preventDefault(); // Prevent default form submission behavior
         try {
             await client.signin(credentials);
             navigate("/Kanbas/Account/Profile");
+        } catch (e: any) {
+            setError(e.response?.data?.message || 'Failed to sign in');
         }
-        catch (e: any) {
-            console.log(error);
-            setError(e.response.data.message);
-        }
-
     };
+
     return (
         <div>
             <h1>Signin</h1>
-            {error && <div>{error}</div>}
-            <label>Username</label> <br/>
-            <input value={credentials.username} onChange={(e) => setCredentials({...credentials, username: e.target.value})} />
-            <br/>
-            <label>Password</label> <br/>
-            <input value={credentials.password} onChange={(e) => setCredentials({...credentials, password: e.target.value})}  />
-            <br/>
-            <button onClick={signin} className='btn btn-primary mt-1' >Signin</button>
+            {error && <div className="alert alert-danger">{error}</div>}
+            <form onSubmit={signin}>
+                <div className="mb-3">
+                    <label htmlFor="username" className="form-label">Username</label>
+                    <input 
+                        id="username"
+                        type="text"
+                        className="form-control"
+                        value={credentials.username} 
+                        onChange={(e) => setCredentials({...credentials, username: e.target.value})} 
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input 
+                        id="password"
+                        type="password"
+                        className="form-control"
+                        value={credentials.password} 
+                        onChange={(e) => setCredentials({...credentials, password: e.target.value})} 
+                    />
+                </div>
+                <button type="submit" className="btn btn-primary">Sign In</button>
+            </form>
         </div>
     )
 }
