@@ -8,15 +8,19 @@ export default function Signup() {
     const [user, setUser] = useState({ username: "", password: "" });
     const navigate = useNavigate();
 
-    const handleSignup = async (event: { preventDefault: () => void; }) => {
-        event.preventDefault(); // Prevent the default form submit action
+    const handleSignup = async () => {
+        console.log("Attempting to signup with:", user);
         try {
-            await client.signup(user);
+            const response = await client.signup(user);
+            console.log("Signup successful:", response);
             navigate("/Kanbas/Account/Profile");
         } catch (err: any) {
-            setError(err.response?.data?.message || "Failed to sign up."); // More robust error handling
+            console.error("Signup error:", err);
+            setError(err.response?.data?.message || "Failed to sign up.");
         }
     };
+    
+    
 
     return (
         <div className="container mt-5">
@@ -33,7 +37,7 @@ export default function Signup() {
                         onChange={(e) => setUser({ ...user, username: e.target.value })}
                         required
                     />
-                </div>
+        </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password:</label>
                     <input 

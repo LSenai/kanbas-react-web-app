@@ -28,10 +28,10 @@ export default function Signin() {
     };
 
     return (
-        <div>
-            <h1>Signin</h1>
+        <div className='container mt-5'>
+            <h1 className='mb-3'>Signin</h1>
             {error && <div className="alert alert-danger">{error}</div>}
-            <form onSubmit={signin}>
+            <form onSubmit={signin} className="w-50 mx-auto">
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">Username</label>
                     <input 
@@ -52,7 +52,8 @@ export default function Signin() {
                         onChange={(e) => setCredentials({...credentials, password: e.target.value})} 
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Sign In</button>
+                <button type="submit" className="btn btn-primary me-1">Sign In</button>
+                <Link to="/Kanbas/Account/Signup" className="btn btn-secondary">Sign Up</Link>
             </form>
         </div>
     )
