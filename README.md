@@ -8,6 +8,19 @@ I'll be updating the README as we go! Note that I'll be deploying different vers
 
 ## Getting Started
 
+### V6 is implemented, but the deployed version is not fully functional :( 
+A deployed version is here: https://assignment-6--comfy-bonbon-d2bf33.netlify.app/#/Kanbas/Dashboard
+
+*However* the most functional version is deployed locally. There were issues with making the server-side dedployment using the on-render.com service we used for the assignment. Therefore the professor only required that it functions locally. To run locally, you will need to download and run the server-side and front-end code:
+
+Server side code: https://github.com/LSenai/kanbas-node-server/tree/assignment-6
+- I typically run this with the command nodemon App.js
+
+Client side code: https://github.com/LSenai/kanbas-react-web-app/tree/assignment-6
+- go to directory with the source directory and run 'npm build'
+
+Hopefully over the summer I'll try to investigate the issue with on-render and perhaps deploy using another service. 
+
 ### V5 
 V5 is live! https://assignment-5--comfy-bonbon-d2bf33.netlify.app/#/Kanbas/Dashboard
 
